@@ -63,3 +63,37 @@ Calculated after each insertion.
 - The deletion function should return whether it was able to delete the data entry.
 - The lookup function takes a default value argument. If the key doesn't exist the default value is returned. The value is returned by value.
 - The hash table should be able to completely free itself from memory. Including all linked list nodes, and the buckets array.
+
+### Iteration
+
+The hash table has a foreach function that iterates over all key-value pairs. 
+The iteration order is not guaranteed (depends on hash function and bucket order).
+The foreach function accepts a callback function with signature: 
+`void callback(int key, int value, void* user_data)`.
+The callback is invoked once for each key-value pair in the table.
+
+## Data persistence
+
+The hash table can be saved and loaded int a `.txt` file. 
+
+**File format**
+```
+count
+key1 value1
+key2 value2
+key3 value3
+...
+```
+
+The `count` is the total number of key-value pairs.
+
+### Serialization
+
+The foreach function iterates over all key-value pairs and writes them to the file.
+
+### Deserialization
+
+1. Read the count from the first line
+2. Create a new empty hash table with initial size: `next_prime(count / 0.75)` (optimization to avoid resizing during load)
+3. Read and insert each key-value pair using the standard insert function
+4. Return the newly created hash table
