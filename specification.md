@@ -74,7 +74,7 @@ The callback is invoked once for each key-value pair in the table.
 
 ## Data persistence
 
-The hash table can be saved and loaded int a `.txt` file. 
+The hash table can be saved and loaded into a `.txt` file. 
 
 **File format**
 ```
