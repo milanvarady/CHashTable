@@ -7,17 +7,26 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Werror")
 
 # Main executable
 add_executable(CHashTable
-        src/hash_table.c
-        src/hash_table.h
+        src/hash_table_core.c
+        src/hash_table_io.c
+        src/hash_table_resize.c
+        src/hash_table_utils.c
         src/main.c)
 
 # Test executable
 add_executable(CHashTable_tests
-        src/hash_table.c
-        src/hash_table.h
-        src/hash_table_internal.h
         tests/munit.c
-        tests/test_hash_table.c)
+        src/hash_table_core.c
+        src/hash_table_io.c
+        src/hash_table_resize.c
+        src/hash_table_utils.c
+        tests/test_hash_table_create.c
+        tests/test_hash_table_insert_get.c
+        tests/test_hash_table_resize.c
+        tests/test_hash_table_delete.c
+        tests/test_hash_table_foreach.c
+        tests/test_hash_table_utils.c
+        tests/test_main.c)
 
 target_include_directories(CHashTable_tests PRIVATE tests)
 target_compile_definitions(CHashTable_tests PRIVATE TESTING)
