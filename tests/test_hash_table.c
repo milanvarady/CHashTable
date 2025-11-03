@@ -1,5 +1,6 @@
 #include "munit.h"
 #include "../src/hash_table.h"
+#include "../src/hash_table_internal.h"
 
 static void*
 hash_table_setup(const MunitParameter params[], void* user_data) {
@@ -239,6 +240,48 @@ test_foreach(const MunitParameter params[], void* fixture) {
     return MUNIT_OK;
 }
 
+static MunitResult
+test_hash_function_positive(const MunitParameter params[], void* fixture) {
+    munit_assert_size(hash_function(0, 10), ==, 0);
+    munit_assert_size(hash_function(10, 10), ==, 0);
+    munit_assert_size(hash_function(2, 10), ==, 2);
+    munit_assert_size(hash_function(12, 10), ==, 2);
+
+    return MUNIT_OK;
+}
+
+static MunitResult
+test_hash_function_negative(const MunitParameter params[], void* fixture) {
+    munit_assert_size(hash_function(-1, 10), ==, 9);
+    munit_assert_size(hash_function(-12, 10), ==, 8);
+    munit_assert_size(hash_function(-10, 10), ==, 0);
+
+    return MUNIT_OK;
+}
+
+static MunitResult
+test_is_prime(const MunitParameter params[], void* fixture) {
+    const size_t primes[5] = { 2, 3, 53, 107, 7919 };
+    const size_t composites[5] = { 0, 1, 4, 105, 108 };
+
+    for (int i = 0; i < 5; i++) {
+        munit_assert_true(is_prime(primes[i]));
+        munit_assert_false(is_prime(composites[i]));
+    }
+
+    return MUNIT_OK;
+}
+
+static MunitResult
+test_next_prime(const MunitParameter params[], void* fixture) {
+    munit_assert_size(next_prime(2), ==, 3);
+    munit_assert_size(next_prime(3), ==, 5);
+    munit_assert_size(next_prime(53), ==, 59);
+    munit_assert_size(next_prime(7907), ==, 7919);
+
+    return MUNIT_OK;
+}
+
 static MunitTest tests[] = {
     { "/create_table", test_create_hash_table, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, NULL },
     { "/insert_get", test_insert_and_get, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, NULL },
@@ -253,6 +296,10 @@ static MunitTest tests[] = {
     { "/test_delete", test_delete, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, NULL },
     { "/delete_all", test_delete_all, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, NULL },
     { "/test_foreach", test_foreach, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, NULL },
+    { "/internal/hash_function_positive", test_hash_function_positive, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },
+    { "/internal/hash_function_negative", test_hash_function_negative, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },
+    { "/internal/is_prime", test_is_prime, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },
+    { "/internal/next_prime", test_next_prime, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },
     { NULL, NULL, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL }
 };
 

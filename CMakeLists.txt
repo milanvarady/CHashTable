@@ -15,7 +15,9 @@ add_executable(CHashTable
 add_executable(CHashTable_tests
         src/hash_table.c
         src/hash_table.h
+        src/hash_table_internal.h
         tests/munit.c
         tests/test_hash_table.c)
 
 target_include_directories(CHashTable_tests PRIVATE tests)
+target_compile_definitions(CHashTable_tests PRIVATE TESTING)

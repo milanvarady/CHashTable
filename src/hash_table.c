@@ -1,3 +1,9 @@
+#ifdef TESTING
+#define STATIC
+#else
+#define STATIC static
+#endif
+
 #include <stdlib.h>
 #include <assert.h>
 #include <limits.h>
@@ -5,15 +11,31 @@
 #include "hash_table.h"
 #include "debugmalloc.h"
 
+STATIC const size_t HT_INITIAL_SIZE = 53;
+STATIC const double HT_LOAD_THRESHOLD = 0.75;
+
+struct entry {
+    int key;
+    int value;
+    struct entry *next;
+};
+
+struct hash_table {
+    Entry **buckets;
+    size_t size;
+    size_t count;
+    size_t load_threshold_count;
+};
+
 // Internal function prototypes
-static size_t calc_load_threshold_count(size_t size);
-static HashTable* hash_table_create_with_size(size_t size);
-static Entry** create_buckets(size_t size);
-static void clear_buckets(Entry** buckets, size_t size);
-static void hash_table_resize(HashTable* table);
-static size_t hash_function(int key, size_t table_size);
-static bool is_prime(size_t n);
-static size_t next_prime(size_t n);
+STATIC size_t calc_load_threshold_count(size_t size);
+STATIC HashTable* hash_table_create_with_size(size_t size);
+STATIC Entry** create_buckets(size_t size);
+STATIC void clear_buckets(Entry** buckets, size_t size);
+STATIC void hash_table_resize(HashTable* table);
+STATIC size_t hash_function(int key, size_t table_size);
+STATIC bool is_prime(size_t n);
+STATIC size_t next_prime(size_t n);
 
 HashTable* hash_table_create(void) {
     return hash_table_create_with_size(HT_INITIAL_SIZE);
@@ -147,7 +169,7 @@ void hash_table_print(const HashTable* table, bool print_empty_buckets) {
 
 // Internal struct methods
 
-static Entry** create_buckets(size_t size) {
+STATIC Entry** create_buckets(size_t size) {
     Entry **buckets = (Entry **)malloc(sizeof(Entry *) * size);
     if (buckets == NULL) return NULL;
 
@@ -159,7 +181,7 @@ static Entry** create_buckets(size_t size) {
     return buckets;
 }
 
-static HashTable* hash_table_create_with_size(size_t size) {
+STATIC HashTable* hash_table_create_with_size(size_t size) {
     // Allocate memory
     Entry **buckets = create_buckets(size);
     if (buckets == NULL) return NULL;
@@ -178,7 +200,7 @@ static HashTable* hash_table_create_with_size(size_t size) {
     return hash_table;
 }
 
-static void clear_buckets(Entry** buckets, size_t size) {
+STATIC void clear_buckets(Entry** buckets, size_t size) {
     for (size_t i = 0; i < size; i++) {
         Entry* head = buckets[i];
 
@@ -192,11 +214,11 @@ static void clear_buckets(Entry** buckets, size_t size) {
     }
 }
 
-static size_t calc_load_threshold_count(size_t size) {
+STATIC size_t calc_load_threshold_count(size_t size) {
     return (size_t)((double)size * HT_LOAD_THRESHOLD);
 }
 
-static void hash_table_resize(HashTable* table) {
+STATIC void hash_table_resize(HashTable* table) {
     const size_t new_size = next_prime(table->size * 2);
     const size_t old_size = table->size;
 
@@ -226,7 +248,7 @@ static void hash_table_resize(HashTable* table) {
 
 // Utilities
 
-static size_t hash_function(int key, size_t table_size) {
+STATIC size_t hash_function(int key, size_t table_size) {
     // Sanity check
     assert(table_size <= INT_MAX);
     int mod = key % (int)table_size;
@@ -236,7 +258,7 @@ static size_t hash_function(int key, size_t table_size) {
     return (size_t)mod;
 }
 
-static bool is_prime(size_t n) {
+STATIC bool is_prime(size_t n) {
     if (n <= 1) return false;
     if (n <= 3) return true;
 
@@ -253,7 +275,7 @@ static bool is_prime(size_t n) {
     return true;
 }
 
-static size_t next_prime(size_t n) {
+STATIC size_t next_prime(size_t n) {
     if (n % 2 == 0) n += 1;
     else            n += 2;
 
