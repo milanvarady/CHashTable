@@ -1,35 +1,22 @@
 #include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
 
 #include "hash_table.h"
 #include "debugmalloc.h"
 
-static const size_t INITIAL_SIZE = 53;
-static const double LOAD_THRESHOLD = 0.75;
-
 // Internal function prototypes
-static double hash_table_load_factor(const HashTable* table);
+static size_t calc_load_threshold_count(size_t size);
 static HashTable* hash_table_create_with_size(size_t size);
 static Entry** create_buckets(size_t size);
 static void clear_buckets(Entry** buckets, size_t size);
 static void hash_table_resize(HashTable* table);
-static int hash_function(int key, size_t table_size);
+static size_t hash_function(int key, size_t table_size);
 static bool is_prime(size_t n);
 static size_t next_prime(size_t n);
 
-struct entry {
-    int key;
-    int value;
-    struct entry *next;
-};
-
-struct hash_table {
-    Entry **buckets;
-    size_t size;
-    size_t count;
-};
-
 HashTable* hash_table_create(void) {
-    return hash_table_create_with_size(INITIAL_SIZE);
+    return hash_table_create_with_size(HT_INITIAL_SIZE);
 }
 
 void hash_table_destroy(HashTable* table) {
@@ -44,7 +31,7 @@ void hash_table_destroy(HashTable* table) {
 }
 
 void hash_table_insert(HashTable* table, int key, int value) {
-    const int hash = hash_function(key, table->size);
+    const size_t hash = hash_function(key, table->size);
     Entry* bucket = table->buckets[hash];
 
     // If the key already exists, modify it
@@ -68,14 +55,13 @@ void hash_table_insert(HashTable* table, int key, int value) {
     table->count++;
 
     // Grow table if needed
-    double load_factor = hash_table_load_factor(table);
-    if (load_factor > LOAD_THRESHOLD) {
+    if (table->count > table->load_threshold_count) {
         hash_table_resize(table);
     }
 }
 
 int hash_table_get(const HashTable* table, int key, int default_value) {
-    const int hash = hash_function(key, table->size);
+    const size_t hash = hash_function(key, table->size);
     const Entry* bucket = table->buckets[hash];
 
     for (const Entry* entry = bucket; entry != NULL; entry = entry->next) {
@@ -88,35 +74,23 @@ int hash_table_get(const HashTable* table, int key, int default_value) {
 }
 
 bool hash_table_delete(HashTable* table, int key) {
-    const int hash = hash_function(key, table->size);
-    Entry* bucket = table->buckets[hash];
+    const size_t hash = hash_function(key, table->size);
 
-    // If first element, replace bucket
-    if (bucket->key == key) {
-        table->buckets[hash] = bucket->next;
-        free(bucket);
-        table->count--;
-        return true;
-    }
-
-    // Else traverse to find the key
-    Entry* previous = bucket;
-    for (Entry* entry = bucket->next; entry != NULL; entry = entry->next) {
-        if (entry->key == key) {
-            previous->next = entry->next;
-            free(entry);
+    for (Entry** indirect = &table->buckets[hash]; *indirect != NULL; indirect = &(*indirect)->next) {
+        if ((*indirect)->key == key) {
+            Entry* to_delete = *indirect;
+            *indirect = to_delete->next;
+            free(to_delete);
             table->count--;
             return true;
         }
-
-        previous = entry;
     }
 
     return false;
 }
 
 void hash_table_foreach(const HashTable* table, void (*callback)(int key, int value, void*), void* user_data) {
-    for (int i = 0; i < table->size; i++) {
+    for (size_t i = 0; i < table->size; i++) {
         Entry* bucket = table->buckets[i];
         for (Entry* entry = bucket; entry != NULL; entry = entry->next) {
             callback(entry->key, entry->value, user_data);
@@ -142,7 +116,7 @@ void hash_table_print(const HashTable* table, bool print_empty_buckets) {
     const size_t size = table->size;
     bool previous_wasnt_empty = false;
 
-    for (int i = 0; i < size; i++) {
+    for (size_t i = 0; i < size; i++) {
         Entry* bucket = table->buckets[i];
         if (bucket == NULL && !print_empty_buckets) {
             if (i != 0 && i != size - 1 && previous_wasnt_empty) {
@@ -153,7 +127,7 @@ void hash_table_print(const HashTable* table, bool print_empty_buckets) {
             continue;
         }
 
-        printf("%d: ", i);
+        printf("%zu: ", i);
 
         if (bucket == NULL) {
             printf("NULL\n");
@@ -178,7 +152,7 @@ static Entry** create_buckets(size_t size) {
     if (buckets == NULL) return NULL;
 
     // Set all buckets to NULL
-    for (int i = 0; i < size; i++) {
+    for (size_t i = 0; i < size; i++) {
         buckets[i] = NULL;
     }
 
@@ -197,14 +171,15 @@ static HashTable* hash_table_create_with_size(size_t size) {
     *hash_table = (HashTable){
         .buckets = buckets,
         .size = size,
-        .count = 0
+        .count = 0,
+        .load_threshold_count = calc_load_threshold_count(size)
     };
 
     return hash_table;
 }
 
 static void clear_buckets(Entry** buckets, size_t size) {
-    for (int i = 0; i < size; i++) {
+    for (size_t i = 0; i < size; i++) {
         Entry* head = buckets[i];
 
         while (head != NULL){
@@ -217,8 +192,8 @@ static void clear_buckets(Entry** buckets, size_t size) {
     }
 }
 
-static double hash_table_load_factor(const HashTable* table) {
-    return (double)(table->count) / (double)(table->size);
+static size_t calc_load_threshold_count(size_t size) {
+    return (size_t)((double)size * HT_LOAD_THRESHOLD);
 }
 
 static void hash_table_resize(HashTable* table) {
@@ -227,6 +202,7 @@ static void hash_table_resize(HashTable* table) {
 
     // Try to allocate new buckets
     Entry** new_buckets = create_buckets(new_size);
+    // Silently fail
     if (new_buckets == NULL) return;
 
     // Swap buckets
@@ -234,9 +210,10 @@ static void hash_table_resize(HashTable* table) {
     table->buckets = new_buckets;
     table->size = new_size;
     table->count = 0;
+    table->load_threshold_count = calc_load_threshold_count(new_size);
 
     // Rehash entries into new buckets
-    for (int i = 0; i < old_size; i++) {
+    for (size_t i = 0; i < old_size; i++) {
         Entry* bucket = old_buckets[i];
         for (Entry* entry = bucket; entry != NULL; entry = entry->next) {
             hash_table_insert(table, entry->key, entry->value);
@@ -249,17 +226,26 @@ static void hash_table_resize(HashTable* table) {
 
 // Utilities
 
-static int hash_function(int key, size_t table_size) {
-    return key % (int)table_size;
+static size_t hash_function(int key, size_t table_size) {
+    // Sanity check
+    assert(table_size <= INT_MAX);
+    int mod = key % (int)table_size;
+    if (mod < 0) {
+        mod += (int)table_size;
+    }
+    return (size_t)mod;
 }
 
 static bool is_prime(size_t n) {
-    // Base cases
     if (n <= 1) return false;
     if (n <= 3) return true;
 
-    for (size_t i = 5; i * i <= n; i += 2) {
-        if (n % i == 0) {
+    // Check if divisible by 2 or 3
+    if (n % 2 == 0 || n % 3 == 0) return false;
+
+    // Optimized checking for 6k-1 6k+1 integers
+    for (size_t i = 5; i * i <= n; i += 6) {
+        if (n % i == 0 || n % (i + 2) == 0) {
             return false;
         }
     }

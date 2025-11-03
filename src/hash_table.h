@@ -3,8 +3,21 @@
 
 #include <stdbool.h>
 
-typedef struct entry Entry;
-typedef struct hash_table HashTable;
+static const size_t HT_INITIAL_SIZE = 53;
+static const double HT_LOAD_THRESHOLD = 0.75;
+
+typedef struct entry {
+    int key;
+    int value;
+    struct entry *next;
+} Entry;
+
+typedef struct hash_table {
+    Entry **buckets;
+    size_t size;
+    size_t count;
+    size_t load_threshold_count;
+} HashTable;
 
 HashTable* hash_table_create(void);
 void hash_table_destroy(HashTable* table);
