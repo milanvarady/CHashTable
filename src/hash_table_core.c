@@ -1,3 +1,10 @@
+/**
+* @file hash_table_core.c
+ * @brief Core HashTable methods.
+ *
+ * Includes the create, destroy, insert, get, delete, and foreach HashTable methods
+ */
+
 #include <stdlib.h>
 
 #include "hash_table.h"
@@ -52,17 +59,17 @@ void hash_table_insert(HashTable* table, int key, int value) {
     }
 }
 
-int hash_table_get(const HashTable* table, int key, int default_value) {
+const Entry* hash_table_get(const HashTable* table, int key) {
     const size_t hash = hash_function(key, table->size);
     const Entry* bucket = table->buckets[hash];
 
     for (const Entry* entry = bucket; entry != NULL; entry = entry->next) {
         if (entry->key == key) {
-            return entry->value;
+            return entry;
         }
     }
 
-    return default_value;
+    return NULL;
 }
 
 bool hash_table_delete(HashTable* table, int key) {

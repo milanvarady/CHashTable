@@ -11,7 +11,9 @@ test_delete(const MunitParameter params[], void* fixture) {
     }
 
     for (int i = 0; i < 5; i++) {
-        munit_assert_int(hash_table_get(table,(int)HT_INITIAL_SIZE * i, -1), ==, i * 10);
+        const Entry *entry = hash_table_get(table,(int)HT_INITIAL_SIZE * i);
+        munit_assert_not_null(entry);
+        munit_assert_int(entry->value, ==, i * 10);
     }
 
     // Delete from head
@@ -51,7 +53,7 @@ test_delete_all(const MunitParameter params[], void* fixture) {
 
     // Verify all are actually gone
     for (int i = 0; i < 10; i++) {
-        munit_assert_int(hash_table_get(table, i, -1), ==, -1);
+        munit_assert_null(hash_table_get(table, i));
     }
 
     return MUNIT_OK;

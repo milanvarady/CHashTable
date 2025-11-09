@@ -1,3 +1,8 @@
+/**
+ * @file hash_table_utils.c
+ * @brief Internal utility functions for HashTable
+ */
+
 #include <stdio.h>
 #include <assert.h>
 #include <limits.h>

@@ -61,7 +61,7 @@ Calculated after each insertion.
 
 - When inserting first we check if the key exists. If so the existing entry is updated. Otherwise the new entry is prepended to the head of the list.
 - The deletion function should return whether it was able to delete the data entry.
-- The lookup function takes a default value argument. If the key doesn't exist the default value is returned. The value is returned by value.
+- The get method returns a pointer to the entry or `NULL` if it wasn't found.
 - The hash table should be able to completely free itself from memory. Including all linked list nodes, and the buckets array.
 
 ### Iteration

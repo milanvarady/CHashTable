@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 4.0)
 project(CHashTable C)
 
 set(CMAKE_C_STANDARD 11)
-set(CMAKE_C_COMPILER gcc)
+#set(CMAKE_C_COMPILER gcc)
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Werror")
 
 # Main executable
@@ -27,6 +27,3 @@ add_executable(CHashTable_tests
         tests/test_hash_table_foreach.c
         tests/test_hash_table_utils.c
         tests/test_main.c)
-
-target_include_directories(CHashTable_tests PRIVATE tests)
-target_compile_definitions(CHashTable_tests PRIVATE TESTING)

@@ -1,3 +1,8 @@
+/**
+* @file main.c
+ * @brief Interactive program to play with the HashTable
+ */
+
 #include <stdio.h>
 #include <stdbool.h>
 

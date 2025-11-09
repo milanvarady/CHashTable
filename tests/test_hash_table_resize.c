@@ -33,7 +33,7 @@ test_data_persists_after_resize(const MunitParameter params[], void* fixture) {
 
     // Verify old data is still there
     for (int i = 0; i < 50; i++) {
-        munit_assert_int(hash_table_get(table, i, -1), ==, i * 10);
+        munit_assert_int(hash_table_get(table, i)->value, ==, i * 10);
     }
 
     return MUNIT_OK;

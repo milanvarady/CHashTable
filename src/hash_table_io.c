@@ -1,3 +1,8 @@
+/**
+* @file hash_table_io.c
+ * @brief Persistence and print methods for HashTable
+ */
+
 #include <stdio.h>
 #include "hash_table.h"
 #include "hash_table_internal.h"

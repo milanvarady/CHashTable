@@ -1,3 +1,8 @@
+/**
+* @file hash_table_resize.c
+ * @brief Internal methods for creating and resizing a HashTable
+ */
+
 #include <stdlib.h>
 #include "hash_table.h"
 #include "hash_table_internal.h"
