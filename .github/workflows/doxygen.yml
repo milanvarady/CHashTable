@@ -12,9 +12,11 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      # 1. Check code
+      # 1. Check out C code and submodule
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          submodules: true
 
       # 2. Install Doxygen and Graphviz
       - name: Install Doxygen
