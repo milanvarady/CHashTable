@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['what_20is_20a_20hash_20table_0',['What is a hash table?',['../md_docs_2specification.html#autotoc_md4',1,'']]]
+  ['value_20storage_0',['Key-value storage',['../md_docs_2specification.html#autotoc_md11',1,'']]]
 ];

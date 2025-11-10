@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['usage_0',['usage',['../md_docs_2interactive__mode.html#autotoc_md2',1,'Example usage'],['../index.html#autotoc_md20',1,'Example usage']]],
-  ['used_1',['External tools used',['../index.html#autotoc_md22',1,'']]]
+  ['table_0',['What is a hash table?',['../md_docs_2specification.html#autotoc_md4',1,'']]],
+  ['table_20size_20resizing_1',['Table size, resizing',['../md_docs_2specification.html#autotoc_md8',1,'']]],
+  ['tools_20used_2',['External tools used',['../index.html#autotoc_md22',1,'']]]
 ];

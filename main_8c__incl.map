@@ -1,9 +1,10 @@
 <map id="src/main.c" name="src/main.c">
-<area shape="rect" id="Node000001" title="Interactive program to play with the HashTable." alt="" coords="93,5,182,31"/>
+<area shape="rect" id="Node000001" title="Interactive program to play with the HashTable." alt="" coords="65,5,154,31"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,79,72,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,33,67,73,64,68,120,29"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="96,79,179,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="140,31,140,65,135,65,135,31"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="203,79,383,104"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="163,28,256,70,254,75,161,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,33,62,71,58,67,96,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="132,152,215,177"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="115,30,124,64,138,103,159,139,155,142,134,105,119,65,109,32"/>
+<area shape="rect" id="Node000004" href="$hash__table_8h.html" title="Public API for HashTable." alt="" coords="147,79,327,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="131,28,205,69,203,74,129,33"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="229,106,195,144,191,140,225,103"/>
 </map>
