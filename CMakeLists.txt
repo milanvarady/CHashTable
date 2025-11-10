@@ -11,7 +11,9 @@ add_executable(CHashTable
         src/hash_table_io.c
         src/hash_table_resize.c
         src/hash_table_utils.c
-        src/main.c)
+        src/main.c
+        src/printf_color.c
+        src/printf_color.h)
 
 # Test executable
 add_executable(CHashTable_tests

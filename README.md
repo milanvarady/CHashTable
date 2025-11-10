@@ -11,7 +11,7 @@ Read detailed [specification](docs/specification.md).
 
 ## Docs
 
-- [API docs]()
+- [API docs](https://milanvarady.github.io/CHashTable/index.html)
 - [Interactive mode](docs/interactive_mode.md)
 
 ## Example usage
