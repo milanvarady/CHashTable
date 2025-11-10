@@ -1,5 +1,5 @@
 /**
-* @file printf_color.c
+* @file printf_color.h
  * @brief Header file for printf_color() function
  */
 
