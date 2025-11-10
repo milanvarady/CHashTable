@@ -81,6 +81,7 @@ var NAVTREEINDEX0 =
 "md_docs_2specification.html#autotoc_md8":[6,1,4],
 "md_docs_2specification.html#autotoc_md9":[6,1,5],
 "pages.html":[],
+"printf__color_8h_source.html":[8,0,0,7],
 "structentry.html":[7,0,0],
 "structhash__table.html":[7,0,1],
 "structhash__table.html#a38685d442d94634ad1a9f1eb16f52ea8":[7,0,1,2],
