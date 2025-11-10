@@ -1,6 +1,7 @@
-//
-// Created by Milán Várady on 2025.11.10.
-//
+/**
+ * @file printf_color.c
+ * @brief printf function with colored output using ANSI escape codes
+ */
 
 #include <stdio.h>
 #include <stdarg.h>

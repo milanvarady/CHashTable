@@ -4,9 +4,10 @@
  */
 
 #include <stdlib.h>
+
 #include "hash_table.h"
 #include "hash_table_internal.h"
-#include "debugmalloc.h"
+#include "../debugmalloc/debugmalloc.h"
 
 Entry** create_buckets(size_t size) {
     Entry **buckets = (Entry **)malloc(sizeof(Entry *) * size);

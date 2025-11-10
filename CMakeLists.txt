@@ -7,21 +7,21 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Werror")
 
 # Main executable
 add_executable(CHashTable
-        src/hash_table_core.c
-        src/hash_table_io.c
-        src/hash_table_resize.c
-        src/hash_table_utils.c
-        src/main.c
-        src/printf_color.c
-        src/printf_color.h)
+        src/hash_table/hash_table_core.c
+        src/hash_table/hash_table_io.c
+        src/hash_table/hash_table_resize.c
+        src/hash_table/hash_table_utils.c
+        src/printf_color/printf_color.c
+        src/printf_color/printf_color.h
+        src/main.c)
 
 # Test executable
 add_executable(CHashTable_tests
         tests/munit.c
-        src/hash_table_core.c
-        src/hash_table_io.c
-        src/hash_table_resize.c
-        src/hash_table_utils.c
+        src/hash_table/hash_table_core.c
+        src/hash_table/hash_table_io.c
+        src/hash_table/hash_table_resize.c
+        src/hash_table/hash_table_utils.c
         tests/test_hash_table_create.c
         tests/test_hash_table_insert_get.c
         tests/test_hash_table_resize.c

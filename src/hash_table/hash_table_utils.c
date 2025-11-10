@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <assert.h>
 #include <limits.h>
+
 #include "hash_table_internal.h"
 
 size_t hash_function(int key, size_t table_size) {

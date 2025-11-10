@@ -1,6 +1,7 @@
-//
-// Created by Milán Várady on 2025.11.10.
-//
+/**
+* @file printf_color.c
+ * @brief Header file for printf_color() function
+ */
 
 #ifndef CHASHTABLE_PRINTF_COLOR_H
 #define CHASHTABLE_PRINTF_COLOR_H

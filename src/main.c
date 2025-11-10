@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-#include "hash_table.h"
+#include "hash_table/hash_table.h"
 
 int main(void) {
     HashTable* table = hash_table_create();

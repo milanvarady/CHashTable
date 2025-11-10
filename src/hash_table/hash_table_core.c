@@ -9,7 +9,7 @@
 
 #include "hash_table.h"
 #include "hash_table_internal.h"
-#include "debugmalloc.h"
+#include "../debugmalloc/debugmalloc.h"
 
 const size_t HT_INITIAL_SIZE = 53;
 const double HT_LOAD_THRESHOLD = 0.75;
