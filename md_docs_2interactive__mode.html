@@ -93,8 +93,49 @@ $(document).ready(function(){initNavTree('md_docs_2interactive__mode.html',''); 
   <div class="headertitle"><div class="title">Interactive mode</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md0"></a> Hello </p>
-</div></div><!-- contents -->
+<div class="textblock"><p><a class="anchor" id="autotoc_md0"></a> The interactive mode can be used to play the hash table through a console-like interface. The user can interact with a hash table by running actions line-by-line.</p>
+<h2><a class="anchor" id="autotoc_md1"></a>
+Available commands:</h2>
+<ul>
+<li><code>add {key} {value}</code>: adds a key-value pair to the table</li>
+<li><code>get {key}</code>: get a value associated to the key</li>
+<li><code>del {key}</code>: deletes an entry</li>
+<li><code>save</code>: saves the current table</li>
+<li><code>load</code>: loads the last saved table</li>
+<li><code>print</code>: prints the table</li>
+<li><code>exit</code>: exits interactive mode</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md2"></a>
+Example usage</h2>
+<div class="fragment"><div class="line">CHashTable Interactive Mode</div>
+<div class="line">---------------------------</div>
+<div class="line">Available commands:</div>
+<div class="line">&gt; add {key} {value}</div>
+<div class="line">&gt; get {key}</div>
+<div class="line">&gt; del {key}</div>
+<div class="line">&gt; save</div>
+<div class="line">&gt; load</div>
+<div class="line">&gt; print</div>
+<div class="line">---------------------------</div>
+<div class="line"> </div>
+<div class="line">&gt; add 1 10</div>
+<div class="line">&gt; add 2 20</div>
+<div class="line">&gt; get 1</div>
+<div class="line">10</div>
+<div class="line">&gt; get 7</div>
+<div class="line">NULL</div>
+<div class="line">&gt; del 2</div>
+<div class="line">&gt; get 2</div>
+<div class="line">NULL</div>
+<div class="line">&gt; save</div>
+<div class="line">&gt; del 1</div>
+<div class="line">&gt; get 1</div>
+<div class="line">NULL</div>
+<div class="line">&gt; load</div>
+<div class="line">&gt; get 1</div>
+<div class="line">10</div>
+<div class="line">&gt; exit</div>
+</div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->

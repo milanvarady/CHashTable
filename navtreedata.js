@@ -25,53 +25,38 @@
 var NAVTREE =
 [
   [ "CHashTable", "index.html", [
-    [ "Implementation", "index.html#autotoc_md16", null ],
-    [ "Docs", "index.html#autotoc_md17", null ],
-    [ "Example usage", "index.html#autotoc_md18", null ],
-    [ "Compile", "index.html#autotoc_md19", null ],
-    [ "External tools used", "index.html#autotoc_md20", null ],
+    [ "Implementation", "index.html#autotoc_md18", null ],
+    [ "Docs", "index.html#autotoc_md19", null ],
+    [ "Example usage", "index.html#autotoc_md20", null ],
+    [ "Compile", "index.html#autotoc_md21", null ],
+    [ "External tools used", "index.html#autotoc_md22", null ],
     [ "Interactive mode", "md_docs_2interactive__mode.html", null ],
     [ "Specification", "md_docs_2specification.html", [
-      [ "What is a hash table?", "md_docs_2specification.html#autotoc_md2", null ],
-      [ "Implementation details", "md_docs_2specification.html#autotoc_md3", [
-        [ "Hash function", "md_docs_2specification.html#autotoc_md4", null ],
-        [ "Collision handling", "md_docs_2specification.html#autotoc_md5", null ],
-        [ "Table size, resizing", "md_docs_2specification.html#autotoc_md6", null ],
-        [ "Memory allocation", "md_docs_2specification.html#autotoc_md7", null ],
-        [ "Load factor calculation", "md_docs_2specification.html#autotoc_md8", null ],
-        [ "Key-value storage", "md_docs_2specification.html#autotoc_md9", null ],
-        [ "Insert, search, delete behavior", "md_docs_2specification.html#autotoc_md10", null ],
-        [ "Iteration", "md_docs_2specification.html#autotoc_md11", null ]
+      [ "What is a hash table?", "md_docs_2specification.html#autotoc_md4", null ],
+      [ "Implementation details", "md_docs_2specification.html#autotoc_md5", [
+        [ "Hash function", "md_docs_2specification.html#autotoc_md6", null ],
+        [ "Collision handling", "md_docs_2specification.html#autotoc_md7", null ],
+        [ "Table size, resizing", "md_docs_2specification.html#autotoc_md8", null ],
+        [ "Memory allocation", "md_docs_2specification.html#autotoc_md9", null ],
+        [ "Load factor calculation", "md_docs_2specification.html#autotoc_md10", null ],
+        [ "Key-value storage", "md_docs_2specification.html#autotoc_md11", null ],
+        [ "Insert, search, delete behavior", "md_docs_2specification.html#autotoc_md12", null ],
+        [ "Iteration", "md_docs_2specification.html#autotoc_md13", null ]
       ] ],
-      [ "Data persistence", "md_docs_2specification.html#autotoc_md12", [
-        [ "Serialization", "md_docs_2specification.html#autotoc_md13", null ],
-        [ "Deserialization", "md_docs_2specification.html#autotoc_md14", null ]
-      ] ]
-    ] ],
-    [ "Data Structures", "annotated.html", [
-      [ "Data Structures", "annotated.html", "annotated_dup" ],
-      [ "Data Structure Index", "classes.html", null ],
-      [ "Data Fields", "functions.html", [
-        [ "All", "functions.html", null ],
-        [ "Variables", "functions_vars.html", null ],
-        [ "Typedefs", "functions_type.html", null ]
+      [ "Data persistence", "md_docs_2specification.html#autotoc_md14", [
+        [ "Serialization", "md_docs_2specification.html#autotoc_md15", null ],
+        [ "Deserialization", "md_docs_2specification.html#autotoc_md16", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ],
-      [ "Globals", "globals.html", [
-        [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ],
-        [ "Variables", "globals_vars.html", null ],
-        [ "Typedefs", "globals_type.html", null ]
-      ] ]
+      [ "File List", "files.html", "files_dup" ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"annotated.html"
+"dir_68267d1309a1af8e8297ef4c3efbcdba.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

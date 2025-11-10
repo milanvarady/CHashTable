@@ -93,8 +93,8 @@ $(document).ready(function(){initNavTree('md_docs_2specification.html',''); init
   <div class="headertitle"><div class="title">Specification</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md1"></a> </p>
-<h1><a class="anchor" id="autotoc_md2"></a>
+<div class="textblock"><p><a class="anchor" id="autotoc_md3"></a> </p>
+<h1><a class="anchor" id="autotoc_md4"></a>
 What is a hash table?</h1>
 <p>A hash table stores data in <b>key-value pairs</b>. This means that each piece of data (value) has an associated key. The main benefit of a hash table is that, if the key is known, we can retrieve its associated value close to <code>O(1)</code> (constant) time. This is much faster than searching through an array to find something which has a time complexity of <code>O(n)</code>. However, this advantage comes at the cost of wasted memory.</p>
 <p>A good hash table implementation should:</p><ul>
@@ -103,34 +103,34 @@ What is a hash table?</h1>
 <li>Distribute the data evenly across the table</li>
 <li>Have a good resizing strategy</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md3"></a>
+<h1><a class="anchor" id="autotoc_md5"></a>
 Implementation details</h1>
-<h2><a class="anchor" id="autotoc_md4"></a>
+<h2><a class="anchor" id="autotoc_md6"></a>
 Hash function</h2>
 <p>For simplicity, I've chosen the <b>division method</b>, which works by dividing the key by the table size and taking the remainder. <code>hash = key % table_size</code>.</p>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h2><a class="anchor" id="autotoc_md7"></a>
 Collision handling</h2>
 <p>A collision occurs when two different keys produce the same hash. To handle this, I have chosen the method of using <b>linked lists</b>. Each table slot contains a pointer to a linked list. Colliding entries are appended to the list. When we want to retrieve or delete an element, we traverse through the linked list until we find the key.</p>
 <p>Worst case, this produces an <code>O(n)</code> search time but with a good hash function the list should be relatively short. This provides a close to constant search time.</p>
-<h2><a class="anchor" id="autotoc_md6"></a>
+<h2><a class="anchor" id="autotoc_md8"></a>
 Table size, resizing</h2>
 <p>The table size should always be a <b>prime number</b>. This prevents the table size and the keys from having a common factor. This gives an even distribution across the table. The initial size is <b>53</b>.</p>
 <p>When the table starts to fill up, it needs to be resized. To decide when to resize, we calculate the <b>load factor</b>: <code>load_factor = total_number_of_entries / current_table_size</code>. When load factor exceeds <b>0.75</b> after an insertion, the table is immediately resized. The next table size is calculated by first doubling the current size, then finding the closest prime that is larger than the new size.</p>
 <p>All existing entries must be rehashed into the new table using the new table size.</p>
-<h2><a class="anchor" id="autotoc_md7"></a>
+<h2><a class="anchor" id="autotoc_md9"></a>
 Memory allocation</h2>
 <p>Because the table size can be increased, the hash table must be dynamically allocated on the <b>heap</b>. When increasing the size, the old table array is freed after all entries are migrated to new table.</p>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md10"></a>
 Load factor calculation</h2>
 <p>Formula: <code>load_factor = total_number_of_entries / current_table_size</code></p>
 <p>Calculated after each insertion.</p>
-<h2><a class="anchor" id="autotoc_md9"></a>
+<h2><a class="anchor" id="autotoc_md11"></a>
 Key-value storage</h2>
 <ul>
 <li>Key data type: <code>int</code></li>
 <li>Value data type: <code>int</code></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md10"></a>
+<h2><a class="anchor" id="autotoc_md12"></a>
 Insert, search, delete behavior</h2>
 <ul>
 <li>When inserting first we check if the key exists. If so the existing entry is updated. Otherwise the new entry is prepended to the head of the list.</li>
@@ -138,10 +138,10 @@ Insert, search, delete behavior</h2>
 <li>The get method returns a pointer to the entry or <code>NULL</code> if it wasn't found.</li>
 <li>The hash table should be able to completely free itself from memory. Including all linked list nodes, and the buckets array.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md11"></a>
+<h2><a class="anchor" id="autotoc_md13"></a>
 Iteration</h2>
 <p>The hash table has a foreach function that iterates over all key-value pairs. The iteration order is not guaranteed (depends on hash function and bucket order). The foreach function accepts a callback function with signature: <code>void callback(int key, int value, void* user_data)</code>. The callback is invoked once for each key-value pair in the table.</p>
-<h1><a class="anchor" id="autotoc_md12"></a>
+<h1><a class="anchor" id="autotoc_md14"></a>
 Data persistence</h1>
 <p>The hash table can be saved and loaded into a <code>.txt</code> file.</p>
 <p><b>File format</b> </p><div class="fragment"><div class="line">count</div>
@@ -150,10 +150,10 @@ Data persistence</h1>
 <div class="line">key3 value3</div>
 <div class="line">...</div>
 </div><!-- fragment --><p>The <code>count</code> is the total number of key-value pairs.</p>
-<h2><a class="anchor" id="autotoc_md13"></a>
+<h2><a class="anchor" id="autotoc_md15"></a>
 Serialization</h2>
 <p>The foreach function iterates over all key-value pairs and writes them to the file.</p>
-<h2><a class="anchor" id="autotoc_md14"></a>
+<h2><a class="anchor" id="autotoc_md16"></a>
 Deserialization</h2>
 <ol type="1">
 <li>Read the count from the first line</li>

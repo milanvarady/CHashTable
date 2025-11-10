@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['persistence_0',['Data persistence',['../md_docs_2specification.html#autotoc_md12',1,'']]]
+  ['resizing_0',['Table size, resizing',['../md_docs_2specification.html#autotoc_md8',1,'']]]
 ];
