@@ -31,16 +31,14 @@ typedef struct {
     Command cmd;        /**< Command*/
     int arg_key;        /**< Argument 1, hash table key*/
     int arg_value;      /**< Argument 2, hash table value */
-} InteractiveModeInput;
+} ParsedInput;
 
 /**
- * @brief Prompts the user for command
- *
- * Prompts user for input from the standard input.
- * Parses and returns the command and arguments.
- *
- * @return Struct containing command and arguments (key, value)
+ * @brief Prompts user for interactive mode command and arguments
+ * @param input_stream Stream to get the input from
+ * @param output_stream Stream to print to
+ * @return ParsedInput object with parsed command and argument
  */
-InteractiveModeInput get_input(FILE *input_stream, FILE *output_stream);
+ParsedInput get_input(FILE *input_stream, FILE *output_stream);
 
 #endif //CHASHTABLE_INTERACTIVE_MODE_H

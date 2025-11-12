@@ -12,7 +12,7 @@ int main(void) {
     // HashTable* table = hash_table_create();
 
     while (true) {
-        InteractiveModeInput input = get_input(stdin, stdout);
+        ParsedInput input = get_input(stdin, stdout);
         printf("%d %d\n", input.arg_key, input.arg_value);
         if (input.cmd == CMD_EXIT) break;
     }

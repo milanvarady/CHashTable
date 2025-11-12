@@ -1,5 +1,5 @@
 /**
-* @file fprintf_color.h
+ * @file fprintf_color.h
  * @brief Header file for fprintf_color() function
  */
 

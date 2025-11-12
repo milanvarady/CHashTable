@@ -19,11 +19,17 @@ const CommandMap command_table[CMD_COUNT] = {
     {"exit", CMD_EXIT}
 };
 
+/** @brief Result type for str_to_int() */
 typedef struct {
     int num;
     bool success;
 } StrToIntResult;
 
+/**
+ * @brief Converts string to int with error reporting
+ * @param str String to convert
+ * @return StrToIntResult object with the int and success
+ */
 static StrToIntResult str_to_int(const char *str) {
     StrToIntResult result = {
         .num = 0,
@@ -43,12 +49,17 @@ static StrToIntResult str_to_int(const char *str) {
     return result;
 }
 
+/**
+ * @brief Prints red-colored error
+ * @param stream Stream to print to
+ * @param err Error string
+ */
 static void print_error(FILE *stream, const char *err) {
     fprintf_color(stream, COLOR_BOLD_RED, "%s\n", err);
 }
 
-InteractiveModeInput get_input(FILE *input_stream, FILE *output_stream) {
-    InteractiveModeInput result = {
+ParsedInput get_input(FILE *input_stream, FILE *output_stream) {
+    ParsedInput result = {
         .cmd = CMD_INVALID,
         .arg_key = -1,
         .arg_value = -1
