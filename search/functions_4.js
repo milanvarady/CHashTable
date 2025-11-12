@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['printf_5fcolor_0',['printf_color',['../printf__color_8c.html#a9967b0425cd3b3a2bbcbef8f61b393c2',1,'printf_color(ColorCode code, const char *format,...):&#160;printf_color.c'],['../printf__color_8h.html#a9967b0425cd3b3a2bbcbef8f61b393c2',1,'printf_color(ColorCode code, const char *format,...):&#160;printf_color.c']]]
+  ['is_5fprime_0',['is_prime',['../hash__table__internal_8h.html#a948fa3ec8d71eba5a4e31b6f6ddff253',1,'is_prime(size_t n):&#160;hash_table_utils.c'],['../hash__table__utils_8c.html#a948fa3ec8d71eba5a4e31b6f6ddff253',1,'is_prime(size_t n):&#160;hash_table_utils.c']]]
 ];

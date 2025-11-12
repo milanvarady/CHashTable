@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CHashTable: src/printf_color/printf_color.h File Reference</title>
+<title>CHashTable: src/printf_color/fprintf_color.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,7 +64,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('printf__color_8h.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('fprintf__color_8c.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -91,55 +91,54 @@ $(document).ready(function(){initNavTree('printf__color_8h.html',''); initResiza
 
 <div class="header">
   <div class="summary">
-<a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">printf_color.h File Reference</div></div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">fprintf_color.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Header file for <a class="el" href="printf__color_8h.html#a9967b0425cd3b3a2bbcbef8f61b393c2" title="Prints a formatted string to stdout in a specified color.">printf_color()</a> function.  
+<p>printf function with colored output using ANSI escape codes  
 <a href="#details">More...</a></p>
-<div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdarg.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="fprintf__color_8h_source.html">fprintf_color.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for fprintf_color.c:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="printf__color_8h__dep__incl.svg" width="170" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="fprintf__color_8c__incl.svg" width="312" height="124"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-</div>
-<p><a href="printf__color_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:aace160b75cc5038178b92febf9efa273" id="r_aace160b75cc5038178b92febf9efa273"><td class="memItemLeft" align="right" valign="top"><a id="aace160b75cc5038178b92febf9efa273" name="aace160b75cc5038178b92febf9efa273"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>ColorCode</b> { <br />
-&#160;&#160;<b>COLOR_RESET</b>
-, <b>COLOR_RED</b>
-, <b>COLOR_GREEN</b>
-, <b>COLOR_BLUE</b>
-, <br />
-&#160;&#160;<b>COLOR_BOLD_RED</b>
-<br />
- }</td></tr>
-<tr class="separator:aace160b75cc5038178b92febf9efa273"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9967b0425cd3b3a2bbcbef8f61b393c2" id="r_a9967b0425cd3b3a2bbcbef8f61b393c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="printf__color_8h.html#a9967b0425cd3b3a2bbcbef8f61b393c2">printf_color</a> (ColorCode code, const char *format,...)</td></tr>
-<tr class="memdesc:a9967b0425cd3b3a2bbcbef8f61b393c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a formatted string to stdout in a specified color.  <br /></td></tr>
-<tr class="separator:a9967b0425cd3b3a2bbcbef8f61b393c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add1f12e53b5c2e938515bbff2bbbc50a" id="r_add1f12e53b5c2e938515bbff2bbbc50a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fprintf__color_8c.html#add1f12e53b5c2e938515bbff2bbbc50a">fprintf_color</a> (FILE *stream, <a class="el" href="fprintf__color_8h.html#aace160b75cc5038178b92febf9efa273">ColorCode</a> color_code, const char *format,...)</td></tr>
+<tr class="memdesc:add1f12e53b5c2e938515bbff2bbbc50a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a formatted string to stdout in a specified color.  <br /></td></tr>
+<tr class="separator:add1f12e53b5c2e938515bbff2bbbc50a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a80bb2f9de288c15681a8fec9c361ec46" id="r_a80bb2f9de288c15681a8fec9c361ec46"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fprintf__color_8c.html#a80bb2f9de288c15681a8fec9c361ec46">colors</a> []</td></tr>
+<tr class="separator:a80bb2f9de288c15681a8fec9c361ec46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Header file for <a class="el" href="printf__color_8h.html#a9967b0425cd3b3a2bbcbef8f61b393c2" title="Prints a formatted string to stdout in a specified color.">printf_color()</a> function. </p>
+<div class="textblock"><p>printf function with colored output using ANSI escape codes </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a9967b0425cd3b3a2bbcbef8f61b393c2" name="a9967b0425cd3b3a2bbcbef8f61b393c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9967b0425cd3b3a2bbcbef8f61b393c2">&#9670;&#160;</a></span>printf_color()</h2>
+<a id="add1f12e53b5c2e938515bbff2bbbc50a" name="add1f12e53b5c2e938515bbff2bbbc50a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add1f12e53b5c2e938515bbff2bbbc50a">&#9670;&#160;</a></span>fprintf_color()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void printf_color </td>
+          <td class="memname">void fprintf_color </td>
           <td>(</td>
-          <td class="paramtype">ColorCode&#160;</td>
-          <td class="paramname"><em>code</em>, </td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>stream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="fprintf__color_8h.html#aace160b75cc5038178b92febf9efa273">ColorCode</a>&#160;</td>
+          <td class="paramname"><em>color_code</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -173,12 +172,42 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a80bb2f9de288c15681a8fec9c361ec46" name="a80bb2f9de288c15681a8fec9c361ec46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80bb2f9de288c15681a8fec9c361ec46">&#9670;&#160;</a></span>colors</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* colors[]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    [COLOR_RESET]    = <span class="stringliteral">&quot;\033[0m&quot;</span>,</div>
+<div class="line">    [COLOR_RED]      = <span class="stringliteral">&quot;\033[31m&quot;</span>,</div>
+<div class="line">    [COLOR_GREEN]    = <span class="stringliteral">&quot;\033[32m&quot;</span>,</div>
+<div class="line">    [COLOR_BLUE]     = <span class="stringliteral">&quot;\033[34m&quot;</span>,</div>
+<div class="line">    [COLOR_BOLD_RED] = <span class="stringliteral">&quot;\033[1;31m&quot;</span></div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b2650ae081ac14b58e5fc705c4b49cc7.html">printf_color</a></li><li class="navelem"><a class="el" href="printf__color_8h.html">printf_color.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b2650ae081ac14b58e5fc705c4b49cc7.html">printf_color</a></li><li class="navelem"><a class="el" href="fprintf__color_8c.html">fprintf_color.c</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
