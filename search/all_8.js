@@ -5,8 +5,7 @@ var searchData=
   ['insert_20search_20delete_20behavior_2',['Insert, search, delete behavior',['../md_docs_2specification.html#autotoc_md12',1,'']]],
   ['interactive_20mode_3',['Interactive mode',['../md_docs_2interactive__mode.html',1,'']]],
   ['interactive_5fmode_2eh_4',['interactive_mode.h',['../interactive__mode_8h.html',1,'']]],
-  ['interactivemodeinput_5',['InteractiveModeInput',['../structInteractiveModeInput.html',1,'']]],
-  ['is_20a_20hash_20table_6',['What is a hash table?',['../md_docs_2specification.html#autotoc_md4',1,'']]],
-  ['is_5fprime_7',['is_prime',['../hash__table__internal_8h.html#a948fa3ec8d71eba5a4e31b6f6ddff253',1,'is_prime(size_t n):&#160;hash_table_utils.c'],['../hash__table__utils_8c.html#a948fa3ec8d71eba5a4e31b6f6ddff253',1,'is_prime(size_t n):&#160;hash_table_utils.c']]],
-  ['iteration_8',['Iteration',['../md_docs_2specification.html#autotoc_md13',1,'']]]
+  ['is_20a_20hash_20table_5',['What is a hash table?',['../md_docs_2specification.html#autotoc_md4',1,'']]],
+  ['is_5fprime_6',['is_prime',['../hash__table__internal_8h.html#a948fa3ec8d71eba5a4e31b6f6ddff253',1,'is_prime(size_t n):&#160;hash_table_utils.c'],['../hash__table__utils_8c.html#a948fa3ec8d71eba5a4e31b6f6ddff253',1,'is_prime(size_t n):&#160;hash_table_utils.c']]],
+  ['iteration_7',['Iteration',['../md_docs_2specification.html#autotoc_md13',1,'']]]
 ];

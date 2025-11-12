@@ -116,8 +116,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structInteractiveModeInput.html">InteractiveModeInput</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interactive mode command line input.  <a href="structInteractiveModeInput.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structParsedInput.html">ParsedInput</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interactive mode command line input.  <a href="structParsedInput.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
@@ -139,21 +139,21 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad50ec190ff96bd3a6087a5dbe693ec79" id="r_ad50ec190ff96bd3a6087a5dbe693ec79"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structInteractiveModeInput.html">InteractiveModeInput</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interactive__mode_8h.html#ad50ec190ff96bd3a6087a5dbe693ec79">get_input</a> (FILE *input_stream, FILE *output_stream)</td></tr>
-<tr class="memdesc:ad50ec190ff96bd3a6087a5dbe693ec79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prompts the user for command.  <br /></td></tr>
-<tr class="separator:ad50ec190ff96bd3a6087a5dbe693ec79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26f0b1b00547c4aa9259f7aafd710bc3" id="r_a26f0b1b00547c4aa9259f7aafd710bc3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structParsedInput.html">ParsedInput</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interactive__mode_8h.html#a26f0b1b00547c4aa9259f7aafd710bc3">get_input</a> (FILE *input_stream, FILE *output_stream)</td></tr>
+<tr class="memdesc:a26f0b1b00547c4aa9259f7aafd710bc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prompts user for interactive mode command and arguments.  <br /></td></tr>
+<tr class="separator:a26f0b1b00547c4aa9259f7aafd710bc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Argument parser API for interactive mode. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="ad50ec190ff96bd3a6087a5dbe693ec79" name="ad50ec190ff96bd3a6087a5dbe693ec79"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad50ec190ff96bd3a6087a5dbe693ec79">&#9670;&#160;</a></span>get_input()</h2>
+<a id="a26f0b1b00547c4aa9259f7aafd710bc3" name="a26f0b1b00547c4aa9259f7aafd710bc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26f0b1b00547c4aa9259f7aafd710bc3">&#9670;&#160;</a></span>get_input()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structInteractiveModeInput.html">InteractiveModeInput</a> get_input </td>
+          <td class="memname"><a class="el" href="structParsedInput.html">ParsedInput</a> get_input </td>
           <td>(</td>
           <td class="paramtype">FILE *&#160;</td>
           <td class="paramname"><em>input_stream</em>, </td>
@@ -172,9 +172,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Prompts the user for command. </p>
-<p>Prompts user for input from the standard input. Parses and returns the command and arguments.</p>
-<dl class="section return"><dt>Returns</dt><dd>Struct containing command and arguments (key, value) </dd></dl>
+<p>Prompts user for interactive mode command and arguments. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input_stream</td><td>Stream to get the input from </td></tr>
+    <tr><td class="paramname">output_stream</td><td>Stream to print to </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structParsedInput.html" title="Interactive mode command line input.">ParsedInput</a> object with parsed command and argument </dd></dl>
 
 </div>
 </div>

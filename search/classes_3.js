@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['interactivemodeinput_0',['InteractiveModeInput',['../structInteractiveModeInput.html',1,'']]]
+  ['parsedinput_0',['ParsedInput',['../structParsedInput.html',1,'']]]
 ];
