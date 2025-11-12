@@ -1,5 +1,5 @@
-#include "munit.h"
-#include "utils.h"
+#include "../munit.h"
+#include "../test_utils.h"
 
 void assert_foreach(int key, int value, void* run_count) {
     munit_assert_int(value, ==, key * 10);

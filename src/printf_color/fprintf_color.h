@@ -1,11 +1,14 @@
 /**
-* @file printf_color.h
- * @brief Header file for printf_color() function
+* @file fprintf_color.h
+ * @brief Header file for fprintf_color() function
  */
 
 #ifndef CHASHTABLE_PRINTF_COLOR_H
 #define CHASHTABLE_PRINTF_COLOR_H
 
+/**
+ * @brief Print colors for printf_color()
+ */
 typedef enum {
     COLOR_RESET,
     COLOR_RED,
@@ -20,6 +23,6 @@ typedef enum {
  * @param format The printf-style format string
  * @param ...    The variable arguments for the format string.
  */
-void printf_color(ColorCode code, const char* format, ...);
+void fprintf_color(FILE *stream, ColorCode color_code, const char* format, ...);
 
 #endif //CHASHTABLE_PRINTF_COLOR_H

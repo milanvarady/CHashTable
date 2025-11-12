@@ -24,6 +24,7 @@ Available commands:
 > save
 > load
 > print
+> exit
 ---------------------------
 
 > add 1 10

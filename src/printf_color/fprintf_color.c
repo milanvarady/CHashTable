@@ -1,12 +1,12 @@
 /**
- * @file printf_color.c
+ * @file fprintf_color.c
  * @brief printf function with colored output using ANSI escape codes
  */
 
 #include <stdio.h>
 #include <stdarg.h>
 
-#include "printf_color.h"
+#include "fprintf_color.h"
 
 static const char* colors[] = {
     [COLOR_RESET]    = "\033[0m",
@@ -16,13 +16,13 @@ static const char* colors[] = {
     [COLOR_BOLD_RED] = "\033[1;31m"
 };
 
-void printf_color(ColorCode code, const char* format, ...) {
-    printf("%s", colors[code]);
+void fprintf_color(FILE *stream, ColorCode color_code, const char* format, ...) {
+    printf("%s", colors[color_code]);
 
     va_list args;
     va_start(args, format);
 
-    vfprintf(stdout, format, args);
+    vfprintf(stream, format, args);
 
     va_end(args);
 

@@ -1,5 +1,5 @@
-#include "munit.h"
-#include "utils.h"
+#include "../munit.h"
+#include "../test_utils.h"
 
 static MunitResult
 test_insert_and_get(const MunitParameter params[], void* fixture) {

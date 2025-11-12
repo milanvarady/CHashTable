@@ -7,6 +7,7 @@ extern MunitTest table_delete[];
 extern MunitTest table_resize[];
 extern MunitTest table_foreach[];
 extern MunitTest utils[];
+extern MunitTest argument_parser[];
 
 // Create sub-suites
 static MunitSuite sub_suites[] = {
@@ -16,6 +17,7 @@ static MunitSuite sub_suites[] = {
     { "/resize", table_resize, NULL, 1, MUNIT_SUITE_OPTION_NONE },
     { "/foreach", table_foreach, NULL, 1, MUNIT_SUITE_OPTION_NONE },
     { "/utils", utils, NULL, 1, MUNIT_SUITE_OPTION_NONE },
+    { "/parser", argument_parser, NULL, 1, MUNIT_SUITE_OPTION_NONE },
     { NULL, NULL, NULL, 0, MUNIT_SUITE_OPTION_NONE }
 };
 
