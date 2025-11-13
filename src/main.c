@@ -73,7 +73,9 @@ int main(void) {
                     );
                     break;
                 }
+                HashTable *to_destory = table;
                 table = loaded_table;
+                hash_table_destroy(to_destory);
                 break;
 
             case CMD_PRINT:
@@ -99,6 +101,7 @@ int main(void) {
     }
 
     hash_table_destroy(table);
+    remove(SAVE_FILENAME);
 
     return 0;
 }

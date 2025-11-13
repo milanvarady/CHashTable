@@ -41,6 +41,8 @@ HashTable* hash_table_create_with_size(size_t size) {
 }
 
 void clear_buckets(Entry** buckets, size_t size) {
+    if (buckets == NULL) return;
+
     for (size_t i = 0; i < size; i++) {
         Entry* head = buckets[i];
 
