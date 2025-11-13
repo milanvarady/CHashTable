@@ -19,7 +19,7 @@ var hash__table_8h =
     [ "hash_table_error_string", "hash__table_8h.html#a4f0cfe0d7a97d62684a1c653cd115386", null ],
     [ "hash_table_foreach", "hash__table_8h.html#a8b5f3fafdfff65f0c1a36c02ea712ca4", null ],
     [ "hash_table_get", "hash__table_8h.html#a8d53f49b5d48520f25043c0e1e77f9cc", null ],
-    [ "hash_table_insert", "hash__table_8h.html#ac3152f8452874fa7c30c5a3a33a0aee6", null ],
+    [ "hash_table_insert", "hash__table_8h.html#ac3c9737f9417f37f807ab6c03b00d1d9", null ],
     [ "hash_table_load", "hash__table_8h.html#afdc97992d3940a4cc9a8f8945ace6e48", null ],
     [ "hash_table_print", "hash__table_8h.html#a8697ced64d6a6606f38717377e532a68", null ],
     [ "hash_table_save", "hash__table_8h.html#a3776e0784840a9609f3922b1b95c59ec", null ]

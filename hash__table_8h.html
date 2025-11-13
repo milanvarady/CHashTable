@@ -101,13 +101,7 @@ $(document).ready(function(){initNavTree('hash__table_8h.html',''); initResizabl
 
 <p>Public API for HashTable.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for hash_table.h:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="hash__table_8h__incl.svg" width="162" height="124"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div><div class="textblock"><div class="dynheader">
+<div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="hash__table_8h__dep__incl.svg" width="686" height="227"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
@@ -154,9 +148,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a5615fc731a05f4480e78bd98e3a280c1" id="r_a5615fc731a05f4480e78bd98e3a280c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash__table_8h.html#a5615fc731a05f4480e78bd98e3a280c1">hash_table_destroy</a> (HashTable *table)</td></tr>
 <tr class="memdesc:a5615fc731a05f4480e78bd98e3a280c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees a HashTable from memory.  <br /></td></tr>
 <tr class="separator:a5615fc731a05f4480e78bd98e3a280c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3152f8452874fa7c30c5a3a33a0aee6" id="r_ac3152f8452874fa7c30c5a3a33a0aee6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash__table_8h.html#ac3152f8452874fa7c30c5a3a33a0aee6">hash_table_insert</a> (HashTable *table, int key, int value)</td></tr>
-<tr class="memdesc:ac3152f8452874fa7c30c5a3a33a0aee6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a key-value pair into a HashTable.  <br /></td></tr>
-<tr class="separator:ac3152f8452874fa7c30c5a3a33a0aee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3c9737f9417f37f807ab6c03b00d1d9" id="r_ac3c9737f9417f37f807ab6c03b00d1d9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash__table_8h.html#ac3c9737f9417f37f807ab6c03b00d1d9">hash_table_insert</a> (HashTable *table, int key, int value)</td></tr>
+<tr class="memdesc:ac3c9737f9417f37f807ab6c03b00d1d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a key-value pair into a HashTable.  <br /></td></tr>
+<tr class="separator:ac3c9737f9417f37f807ab6c03b00d1d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d53f49b5d48520f25043c0e1e77f9cc" id="r_a8d53f49b5d48520f25043c0e1e77f9cc"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="hash__table_8h.html#aaa21d050a89c52467a1bea7b9009ceae">Entry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash__table_8h.html#a8d53f49b5d48520f25043c0e1e77f9cc">hash_table_get</a> (const HashTable *table, int key)</td></tr>
 <tr class="memdesc:a8d53f49b5d48520f25043c0e1e77f9cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get element from HashTable.  <br /></td></tr>
 <tr class="separator:a8d53f49b5d48520f25043c0e1e77f9cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -396,14 +390,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ac3152f8452874fa7c30c5a3a33a0aee6" name="ac3152f8452874fa7c30c5a3a33a0aee6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3152f8452874fa7c30c5a3a33a0aee6">&#9670;&#160;</a></span>hash_table_insert()</h2>
+<a id="ac3c9737f9417f37f807ab6c03b00d1d9" name="ac3c9737f9417f37f807ab6c03b00d1d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3c9737f9417f37f807ab6c03b00d1d9">&#9670;&#160;</a></span>hash_table_insert()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void hash_table_insert </td>
+          <td class="memname">bool hash_table_insert </td>
           <td>(</td>
           <td class="paramtype">HashTable *&#160;</td>
           <td class="paramname"><em>table</em>, </td>
@@ -438,6 +432,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>true if insertion was successful </dd></dl>
 
 </div>
 </div>
