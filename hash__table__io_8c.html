@@ -197,11 +197,11 @@ static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><b>HEAD
 </div><div class="memdoc">
 
 <p>Loads a hash table from a specified file. </p>
-<p>Instead of returning the table, it returns an error code. The created hash table is returned via the <code>out_table</code> pointer. On error, <code>out_table</code> is set to NULL (or an intermediate state).</p>
+<p>Instead of returning the table, it returns an error code. The created hash table is returned via the <code>out_table</code> pointer. On error, <code>out_table</code> is set to nullptr (or an intermediate state).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>The path to the file to load. </td></tr>
-    <tr><td class="paramname">out_table</td><td>A pointer to a (HashTable*) variable. On success, this will be set to point to the newly loaded table. On failure, it will be set to NULL. </td></tr>
+    <tr><td class="paramname">out_table</td><td>A pointer to a (HashTable*) variable. On success, this will be set to point to the newly loaded table. On failure, it will be set to nullptr. </td></tr>
   </table>
   </dd>
 </dl>
