@@ -4,5 +4,5 @@ var argument__parser_8c =
     [ "get_input", "argument__parser_8c.html#a26f0b1b00547c4aa9259f7aafd710bc3", null ],
     [ "print_error", "argument__parser_8c.html#a9b8a845ea09c71af46ef522d72d4633a", null ],
     [ "str_to_int", "argument__parser_8c.html#a159c10944ab9cb900b1d93b6fe4b9d4e", null ],
-    [ "command_table", "argument__parser_8c.html#a732160a083d2d8720f380bbd94a5244c", null ]
+    [ "PROMPT_COLOR", "argument__parser_8c.html#a5f1ec8d02aacc4bbb289acf8909d84d7", null ]
 ];

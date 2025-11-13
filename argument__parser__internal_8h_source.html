@@ -105,28 +105,34 @@ $(document).ready(function(){initNavTree('argument__parser__internal_8h_source.h
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="interactive__mode_8h.html">interactive_mode.h</a>&quot;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;../printf_color/fprintf_color.h&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#define MAX_CMD_LEN 128</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#define DELIMITERS &quot; \t\r\n&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#define CMD_COUNT 7</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> MAX_CMD_LEN = 128;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">constexpr</span> <span class="keywordtype">char</span> DELIMITERS[] = <span class="stringliteral">&quot; \t\r\n&quot;</span>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> CMD_COUNT = 7;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="argument__parser__internal_8h.html#a57c37cae4fb4d26f41ff9ab6637e31d1">   17</a></span><span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_enumeration" href="fprintf__color_8h.html#aace160b75cc5038178b92febf9efa273">ColorCode</a> <a class="code hl_variable" href="argument__parser__internal_8h.html#a57c37cae4fb4d26f41ff9ab6637e31d1">PROMPT_COLOR</a> = COLOR_BLUE;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structCommandMap.html">   20</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *cmd_name;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_enumeration" href="interactive__mode_8h.html#a2afce0a47a93eee73a314d53e4890153">Command</a> result_value;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>} <a class="code hl_struct" href="structCommandMap.html">CommandMap</a>;</div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structCommandMap.html">   17</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> cmd_name[16];</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_enumeration" href="interactive__mode_8h.html#a2afce0a47a93eee73a314d53e4890153">Command</a> result_value;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>} <a class="code hl_struct" href="structCommandMap.html">CommandMap</a>;</div>
 </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">extern</span> <span class="keyword">const</span> <a class="code hl_struct" href="structCommandMap.html">CommandMap</a> <a class="code hl_variable" href="argument__parser__internal_8h.html#a732160a083d2d8720f380bbd94a5244c">command_table</a>[CMD_COUNT];</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#endif </span><span class="comment">//CHASHTABLE_ARGUMENT_PARSER_INTERNAL_H</span></div>
-<div class="ttc" id="aargument__parser__internal_8h_html_a57c37cae4fb4d26f41ff9ab6637e31d1"><div class="ttname"><a href="argument__parser__internal_8h.html#a57c37cae4fb4d26f41ff9ab6637e31d1">PROMPT_COLOR</a></div><div class="ttdeci">static const ColorCode PROMPT_COLOR</div><div class="ttdoc">Default interactive mode promp color.</div><div class="ttdef"><b>Definition</b> argument_parser_internal.h:17</div></div>
-<div class="ttc" id="aargument__parser__internal_8h_html_a732160a083d2d8720f380bbd94a5244c"><div class="ttname"><a href="argument__parser__internal_8h.html#a732160a083d2d8720f380bbd94a5244c">command_table</a></div><div class="ttdeci">const CommandMap command_table[CMD_COUNT]</div><div class="ttdoc">Maps command string to enum.</div><div class="ttdef"><b>Definition</b> argument_parser.c:12</div></div>
-<div class="ttc" id="afprintf__color_8h_html_aace160b75cc5038178b92febf9efa273"><div class="ttname"><a href="fprintf__color_8h.html#aace160b75cc5038178b92febf9efa273">ColorCode</a></div><div class="ttdeci">ColorCode</div><div class="ttdoc">Print colors for printf_color()</div><div class="ttdef"><b>Definition</b> fprintf_color.h:12</div></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="argument__parser__internal_8h.html#a768b963c9216c050455348ebbbc32c44">   23</a></span><span class="keyword">constexpr</span> <a class="code hl_struct" href="structCommandMap.html">CommandMap</a> <a class="code hl_variable" href="argument__parser__internal_8h.html#a768b963c9216c050455348ebbbc32c44">command_table</a>[CMD_COUNT] = {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    {<span class="stringliteral">&quot;add&quot;</span>, CMD_ADD},</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    {<span class="stringliteral">&quot;get&quot;</span>, CMD_GET},</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    {<span class="stringliteral">&quot;del&quot;</span>, CMD_DEL},</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    {<span class="stringliteral">&quot;save&quot;</span>, CMD_SAVE},</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    {<span class="stringliteral">&quot;load&quot;</span>, CMD_LOAD},</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    {<span class="stringliteral">&quot;print&quot;</span>, CMD_PRINT},</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    {<span class="stringliteral">&quot;exit&quot;</span>, CMD_EXIT}</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>};</div>
+</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#endif </span><span class="comment">//CHASHTABLE_ARGUMENT_PARSER_INTERNAL_H</span></div>
+<div class="ttc" id="aargument__parser__internal_8h_html_a768b963c9216c050455348ebbbc32c44"><div class="ttname"><a href="argument__parser__internal_8h.html#a768b963c9216c050455348ebbbc32c44">command_table</a></div><div class="ttdeci">constexpr CommandMap command_table[CMD_COUNT]</div><div class="ttdoc">Maps command string to enum.</div><div class="ttdef"><b>Definition</b> argument_parser_internal.h:23</div></div>
 <div class="ttc" id="ainteractive__mode_8h_html"><div class="ttname"><a href="interactive__mode_8h.html">interactive_mode.h</a></div><div class="ttdoc">Argument parser API for interactive mode.</div></div>
 <div class="ttc" id="ainteractive__mode_8h_html_a2afce0a47a93eee73a314d53e4890153"><div class="ttname"><a href="interactive__mode_8h.html#a2afce0a47a93eee73a314d53e4890153">Command</a></div><div class="ttdeci">Command</div><div class="ttdoc">Interactive mode commands.</div><div class="ttdef"><b>Definition</b> interactive_mode.h:14</div></div>
-<div class="ttc" id="astructCommandMap_html"><div class="ttname"><a href="structCommandMap.html">CommandMap</a></div><div class="ttdoc">Maps command string to enum.</div><div class="ttdef"><b>Definition</b> argument_parser_internal.h:20</div></div>
+<div class="ttc" id="astructCommandMap_html"><div class="ttname"><a href="structCommandMap.html">CommandMap</a></div><div class="ttdoc">Maps command string to enum.</div><div class="ttdef"><b>Definition</b> argument_parser_internal.h:17</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

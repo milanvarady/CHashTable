@@ -92,7 +92,6 @@ $(document).ready(function(){initNavTree('argument__parser__internal_8h.html',''
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
-<a href="#define-members">Macros</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">argument_parser_internal.h File Reference</div></div>
 </div><!--header-->
@@ -121,32 +120,58 @@ Data Structures</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps command string to enum.  <a href="structCommandMap.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a1eb73c104b484cf18752169509cebfe2" id="r_a1eb73c104b484cf18752169509cebfe2"><td class="memItemLeft" align="right" valign="top"><a id="a1eb73c104b484cf18752169509cebfe2" name="a1eb73c104b484cf18752169509cebfe2"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_CMD_LEN</b>&#160;&#160;&#160;128</td></tr>
-<tr class="separator:a1eb73c104b484cf18752169509cebfe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad740dfc826a6f447cf2c273f0fdfe74a" id="r_ad740dfc826a6f447cf2c273f0fdfe74a"><td class="memItemLeft" align="right" valign="top"><a id="ad740dfc826a6f447cf2c273f0fdfe74a" name="ad740dfc826a6f447cf2c273f0fdfe74a"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DELIMITERS</b>&#160;&#160;&#160;&quot; \t\r\n&quot;</td></tr>
-<tr class="separator:ad740dfc826a6f447cf2c273f0fdfe74a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29ebdd0ea51f66291f8602228c655d17" id="r_a29ebdd0ea51f66291f8602228c655d17"><td class="memItemLeft" align="right" valign="top"><a id="a29ebdd0ea51f66291f8602228c655d17" name="a29ebdd0ea51f66291f8602228c655d17"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CMD_COUNT</b>&#160;&#160;&#160;7</td></tr>
-<tr class="separator:a29ebdd0ea51f66291f8602228c655d17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a57c37cae4fb4d26f41ff9ab6637e31d1" id="r_a57c37cae4fb4d26f41ff9ab6637e31d1"><td class="memItemLeft" align="right" valign="top"><a id="a57c37cae4fb4d26f41ff9ab6637e31d1" name="a57c37cae4fb4d26f41ff9ab6637e31d1"></a>
-static const <a class="el" href="fprintf__color_8h.html#aace160b75cc5038178b92febf9efa273">ColorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><b>PROMPT_COLOR</b> = COLOR_BLUE</td></tr>
-<tr class="memdesc:a57c37cae4fb4d26f41ff9ab6637e31d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default interactive mode promp color. <br /></td></tr>
-<tr class="separator:a57c37cae4fb4d26f41ff9ab6637e31d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a732160a083d2d8720f380bbd94a5244c" id="r_a732160a083d2d8720f380bbd94a5244c"><td class="memItemLeft" align="right" valign="top"><a id="a732160a083d2d8720f380bbd94a5244c" name="a732160a083d2d8720f380bbd94a5244c"></a>
-const <a class="el" href="structCommandMap.html">CommandMap</a>&#160;</td><td class="memItemRight" valign="bottom"><b>command_table</b> [CMD_COUNT]</td></tr>
-<tr class="memdesc:a732160a083d2d8720f380bbd94a5244c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps command string to enum. <br /></td></tr>
-<tr class="separator:a732160a083d2d8720f380bbd94a5244c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1da9f7e4088fde172ecac6fcda85184" id="r_ab1da9f7e4088fde172ecac6fcda85184"><td class="memItemLeft" align="right" valign="top"><a id="ab1da9f7e4088fde172ecac6fcda85184" name="ab1da9f7e4088fde172ecac6fcda85184"></a>
+constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_CMD_LEN</b> = 128</td></tr>
+<tr class="separator:ab1da9f7e4088fde172ecac6fcda85184"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b82a92987c5a9605d0466a842003c02" id="r_a9b82a92987c5a9605d0466a842003c02"><td class="memItemLeft" align="right" valign="top"><a id="a9b82a92987c5a9605d0466a842003c02" name="a9b82a92987c5a9605d0466a842003c02"></a>
+constexpr char&#160;</td><td class="memItemRight" valign="bottom"><b>DELIMITERS</b> [] = &quot; \t\r\n&quot;</td></tr>
+<tr class="separator:a9b82a92987c5a9605d0466a842003c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fe4d16920e85e736914018fec38be41" id="r_a8fe4d16920e85e736914018fec38be41"><td class="memItemLeft" align="right" valign="top"><a id="a8fe4d16920e85e736914018fec38be41" name="a8fe4d16920e85e736914018fec38be41"></a>
+constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>CMD_COUNT</b> = 7</td></tr>
+<tr class="separator:a8fe4d16920e85e736914018fec38be41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a768b963c9216c050455348ebbbc32c44" id="r_a768b963c9216c050455348ebbbc32c44"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structCommandMap.html">CommandMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="argument__parser__internal_8h.html#a768b963c9216c050455348ebbbc32c44">command_table</a> [CMD_COUNT]</td></tr>
+<tr class="memdesc:a768b963c9216c050455348ebbbc32c44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps command string to enum.  <br /></td></tr>
+<tr class="separator:a768b963c9216c050455348ebbbc32c44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Argument parser internal API exposed for testing. </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Variable Documentation</h2>
+<a id="a768b963c9216c050455348ebbbc32c44" name="a768b963c9216c050455348ebbbc32c44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a768b963c9216c050455348ebbbc32c44">&#9670;&#160;</a></span>command_table</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="structCommandMap.html">CommandMap</a> command_table[CMD_COUNT]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    {<span class="stringliteral">&quot;add&quot;</span>, CMD_ADD},</div>
+<div class="line">    {<span class="stringliteral">&quot;get&quot;</span>, CMD_GET},</div>
+<div class="line">    {<span class="stringliteral">&quot;del&quot;</span>, CMD_DEL},</div>
+<div class="line">    {<span class="stringliteral">&quot;save&quot;</span>, CMD_SAVE},</div>
+<div class="line">    {<span class="stringliteral">&quot;load&quot;</span>, CMD_LOAD},</div>
+<div class="line">    {<span class="stringliteral">&quot;print&quot;</span>, CMD_PRINT},</div>
+<div class="line">    {<span class="stringliteral">&quot;exit&quot;</span>, CMD_EXIT}</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p>Maps command string to enum. </p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
