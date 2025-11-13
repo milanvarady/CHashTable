@@ -10,9 +10,9 @@
 #include "hash_table.h"
 
 /** @brief Initial hash table size, always a prime number */
-extern const size_t HT_INITIAL_SIZE;
+constexpr size_t HT_INITIAL_SIZE = 53;
 /** @brief The hash table grows if the count/size ratio exceeds this threshold */
-extern const double HT_LOAD_THRESHOLD;
+constexpr double HT_LOAD_THRESHOLD = 0.75;
 
 /**
  * @biref Internal implementation of the hash table

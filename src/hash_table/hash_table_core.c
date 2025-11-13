@@ -11,14 +11,13 @@
 #include "hash_table_internal.h"
 #include "../debugmalloc/debugmalloc.h"
 
-const size_t HT_INITIAL_SIZE = 53;
-const double HT_LOAD_THRESHOLD = 0.75;
-
 HashTable* hash_table_create(void) {
     return hash_table_create_with_size(HT_INITIAL_SIZE);
 }
 
 void hash_table_destroy(HashTable* table) {
+    if (table == NULL) return;
+
     // Free all entries
     clear_buckets(table->buckets, table->size);
 
@@ -30,6 +29,8 @@ void hash_table_destroy(HashTable* table) {
 }
 
 void hash_table_insert(HashTable* table, int key, int value) {
+    if (table == NULL) return;
+
     const size_t hash = hash_function(key, table->size);
     Entry* bucket = table->buckets[hash];
 
@@ -60,6 +61,8 @@ void hash_table_insert(HashTable* table, int key, int value) {
 }
 
 const Entry* hash_table_get(const HashTable* table, int key) {
+    if (table == NULL) return NULL;
+
     const size_t hash = hash_function(key, table->size);
     const Entry* bucket = table->buckets[hash];
 
@@ -73,6 +76,8 @@ const Entry* hash_table_get(const HashTable* table, int key) {
 }
 
 bool hash_table_delete(HashTable* table, int key) {
+    if (table == NULL) return false;
+
     const size_t hash = hash_function(key, table->size);
 
     for (Entry** indirect = &table->buckets[hash]; *indirect != NULL; indirect = &(*indirect)->next) {
@@ -89,6 +94,8 @@ bool hash_table_delete(HashTable* table, int key) {
 }
 
 void hash_table_foreach(const HashTable* table, void (*callback)(int key, int value, void*), void* user_data) {
+    if (table == NULL) return;
+
     for (size_t i = 0; i < table->size; i++) {
         Entry* bucket = table->buckets[i];
         for (Entry* entry = bucket; entry != NULL; entry = entry->next) {

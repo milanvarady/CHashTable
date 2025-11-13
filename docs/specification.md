@@ -80,9 +80,9 @@ The hash table can be saved and loaded into a `.txt` file.
 ```
 CHashTable vX.x
 count
-key1 value1
-key2 value2
-key3 value3
+key1=value1
+key2=value2
+key3=value3
 ...
 ```
 

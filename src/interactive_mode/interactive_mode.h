@@ -6,7 +6,14 @@
 #ifndef CHASHTABLE_INTERACTIVE_MODE_H
 #define CHASHTABLE_INTERACTIVE_MODE_H
 
-#include <stdint.h>
+#include "../fprintf_color/fprintf_color.h"
+
+/** @brief Default interactive mode prompt color */
+constexpr ColorCode PROMPT_COLOR = COLOR_BLUE;
+/** @brief Default interactive mode output color */
+constexpr ColorCode OUTPUT_COLOR = COLOR_GREEN;
+/** @brief Default interactive mode error color */
+constexpr ColorCode ERROR_COLOR = COLOR_BOLD_RED;
 
 /**
  * @brief Interactive mode commands
@@ -19,7 +26,8 @@ typedef enum {
     CMD_SAVE,
     CMD_LOAD,
     CMD_PRINT,
-    CMD_EXIT
+    CMD_EXIT,
+    CMD_HELP
 } Command;
 
 /**

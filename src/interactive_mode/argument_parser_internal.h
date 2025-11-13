@@ -7,11 +7,11 @@
 #define CHASHTABLE_ARGUMENT_PARSER_INTERNAL_H
 
 #include "interactive_mode.h"
-#include "../printf_color/fprintf_color.h"
+#include "../fprintf_color/fprintf_color.h"
 
 constexpr size_t MAX_CMD_LEN = 128;
 constexpr char DELIMITERS[] = " \t\r\n";
-constexpr size_t CMD_COUNT = 7;
+constexpr size_t CMD_COUNT = 8;
 
 /** @brief Maps command string to enum */
 typedef struct {
@@ -27,7 +27,8 @@ constexpr CommandMap command_table[CMD_COUNT] = {
     {"save", CMD_SAVE},
     {"load", CMD_LOAD},
     {"print", CMD_PRINT},
-    {"exit", CMD_EXIT}
+    {"exit", CMD_EXIT},
+    {"help", CMD_HELP}
 };
 
 #endif //CHASHTABLE_ARGUMENT_PARSER_INTERNAL_H

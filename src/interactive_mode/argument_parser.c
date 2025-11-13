@@ -9,9 +9,6 @@
 
 #include "argument_parser_internal.h"
 
-/** @brief Default interactive mode promp color */
-static constexpr ColorCode PROMPT_COLOR = COLOR_BLUE;
-
 /** @brief Result type for str_to_int() */
 typedef struct {
     int num;
@@ -48,7 +45,7 @@ static StrToIntResult str_to_int(const char *str) {
  * @param err Error string
  */
 static void print_error(FILE *stream, const char *err) {
-    fprintf_color(stream, COLOR_BOLD_RED, "%s\n", err);
+    fprintf_color(stream, ERROR_COLOR, "%s\n", err);
 }
 
 ParsedInput get_input(FILE *input_stream, FILE *output_stream) {
