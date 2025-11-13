@@ -11,25 +11,25 @@ extern MunitTest argument_parser[];
 
 // Create sub-suites
 static MunitSuite sub_suites[] = {
-    { "/create", table_create, NULL, 1, MUNIT_SUITE_OPTION_NONE },
-    { "/insert_get", table_insert_get, NULL, 1, MUNIT_SUITE_OPTION_NONE },
-    { "/delete", table_delete, NULL, 1, MUNIT_SUITE_OPTION_NONE },
-    { "/resize", table_resize, NULL, 1, MUNIT_SUITE_OPTION_NONE },
-    { "/foreach", table_foreach, NULL, 1, MUNIT_SUITE_OPTION_NONE },
-    { "/utils", utils, NULL, 1, MUNIT_SUITE_OPTION_NONE },
-    { "/parser", argument_parser, NULL, 1, MUNIT_SUITE_OPTION_NONE },
-    { NULL, NULL, NULL, 0, MUNIT_SUITE_OPTION_NONE }
+    { "/create", table_create, nullptr, 1, MUNIT_SUITE_OPTION_NONE },
+    { "/insert_get", table_insert_get, nullptr, 1, MUNIT_SUITE_OPTION_NONE },
+    { "/delete", table_delete, nullptr, 1, MUNIT_SUITE_OPTION_NONE },
+    { "/resize", table_resize, nullptr, 1, MUNIT_SUITE_OPTION_NONE },
+    { "/foreach", table_foreach, nullptr, 1, MUNIT_SUITE_OPTION_NONE },
+    { "/utils", utils, nullptr, 1, MUNIT_SUITE_OPTION_NONE },
+    { "/parser", argument_parser, nullptr, 1, MUNIT_SUITE_OPTION_NONE },
+    { nullptr, nullptr, nullptr, 0, MUNIT_SUITE_OPTION_NONE }
 };
 
 // Main suite
 static const MunitSuite suite = {
     "/ht",
-    NULL,           // No tests at root level
+    nullptr,           // No tests at root level
     sub_suites,     // Use sub-suites instead
     1,
     MUNIT_SUITE_OPTION_NONE
 };
 
 int main(int argc, char* argv[]) {
-    return munit_suite_main(&suite, NULL, argc, argv);
+    return munit_suite_main(&suite, nullptr, argc, argv);
 }

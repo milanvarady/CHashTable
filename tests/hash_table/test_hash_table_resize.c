@@ -40,7 +40,7 @@ test_data_persists_after_resize(const MunitParameter params[], void* fixture) {
 }
 
 MunitTest table_resize[] = {
-    { "/resize", test_resizing, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, NULL },
-    { "/data_persists", test_data_persists_after_resize, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, NULL },
-    { NULL, NULL, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL }
+    { "/resize", test_resizing, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, nullptr },
+    { "/data_persists", test_data_persists_after_resize, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, nullptr },
+    { nullptr, nullptr, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr }
 };

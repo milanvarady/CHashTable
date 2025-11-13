@@ -20,10 +20,10 @@ static void print_entry_to_file(int key, int value, void *file) {
 }
 
 bool hash_table_save(const HashTable* table, const char* filename) {
-    if (table == NULL) return false;
+    if (table == nullptr) return false;
 
     FILE *file = fopen(filename, "w");
-    if (file == NULL) return false;
+    if (file == nullptr) return false;
 
     fprintf(file, "CHashTable v%s\n", VERSION);
     fprintf(file, "%zu\n", table->count);
@@ -39,21 +39,21 @@ bool hash_table_save(const HashTable* table, const char* filename) {
  * @brief Loads a hash table from a specified file.
  */
 HashTable_LoadError hash_table_load(const char* filename, HashTable** out_table) {
-    // Initialize out_table to NULL in case of early failure
-    *out_table = NULL;
+    // Initialize out_table to nullptr in case of early failure
+    *out_table = nullptr;
 
     FILE *file = fopen(filename, "r");
-    if (file == NULL) {
+    if (file == nullptr) {
         return HT_LOAD_ERROR_FILE_OPEN;
     }
 
     char line[MAX_LINE];
     size_t count = 0;
     HashTable_LoadError error_code = HT_LOAD_OK;
-    HashTable *table = NULL;
+    HashTable *table = nullptr;
 
     // 1. Read and validate the header
-    if (fgets(line, sizeof(line), file) == NULL) {
+    if (fgets(line, sizeof(line), file) == nullptr) {
         error_code = HT_LOAD_ERROR_EMPTY;
         goto cleanup;
     }
@@ -65,7 +65,7 @@ HashTable_LoadError hash_table_load(const char* filename, HashTable** out_table)
     }
 
     // 3. Read count
-    if (fgets(line, sizeof(line), file) == NULL) {
+    if (fgets(line, sizeof(line), file) == nullptr) {
         error_code = HT_LOAD_ERROR_MISSING_COUNT;
         goto cleanup;
     }
@@ -81,7 +81,7 @@ HashTable_LoadError hash_table_load(const char* filename, HashTable** out_table)
     initial_size = initial_size < HT_INITIAL_SIZE ? HT_INITIAL_SIZE : next_prime(initial_size);
     table = hash_table_create_with_size(initial_size);
 
-    if (table == NULL) {
+    if (table == nullptr) {
         error_code = HT_LOAD_ERROR_ALLOC_FAILED;
         goto cleanup;
     }
@@ -93,7 +93,7 @@ HashTable_LoadError hash_table_load(const char* filename, HashTable** out_table)
 
     for (size_t i = 0; i < count; i++) {
         // Read the next line
-        if (fgets(line, sizeof(line), file) == NULL) {
+        if (fgets(line, sizeof(line), file) == nullptr) {
             // File ended before we read 'count' items
             error_code = HT_LOAD_ERROR_PREMATURE_EOF;
             goto cleanup; // This will destroy the partially-filled table
@@ -119,9 +119,9 @@ HashTable_LoadError hash_table_load(const char* filename, HashTable** out_table)
 
 cleanup:
     fclose(file);
-    if (error_code != HT_LOAD_OK && table != NULL) {
+    if (error_code != HT_LOAD_OK && table != nullptr) {
         hash_table_destroy(table);
-        *out_table = NULL;
+        *out_table = nullptr;
     }
 
     return error_code;
@@ -156,8 +156,8 @@ const char* hash_table_error_string(HashTable_LoadError error_code) {
 }
 
 void hash_table_print(const HashTable* table, bool print_empty_buckets) {
-    if (table == NULL) {
-        fprintf_color(stdout, ERROR_COLOR, "Table is NULL!");
+    if (table == nullptr) {
+        fprintf_color(stdout, ERROR_COLOR, "Table is nullptr!");
         return;
     }
 
@@ -172,7 +172,7 @@ void hash_table_print(const HashTable* table, bool print_empty_buckets) {
 
     for (size_t i = 0; i < size; i++) {
         Entry* bucket = table->buckets[i];
-        if (bucket == NULL && !print_empty_buckets) {
+        if (bucket == nullptr && !print_empty_buckets) {
             if (i != 0 && i != size - 1 && previous_wasnt_empty) {
                 printf("...\n");
                 previous_wasnt_empty = false;
@@ -183,14 +183,14 @@ void hash_table_print(const HashTable* table, bool print_empty_buckets) {
 
         printf("%zu: ", i);
 
-        if (bucket == NULL) {
-            printf("NULL\n");
+        if (bucket == nullptr) {
+            printf("nullptr\n");
             continue;
         }
 
-        for (Entry* entry = bucket; entry != NULL; entry = entry->next) {
+        for (Entry* entry = bucket; entry != nullptr; entry = entry->next) {
             printf("(%d, %d)", entry->key, entry->value);
-            if (entry->next != NULL) printf(" -> ");
+            if (entry->next != nullptr) printf(" -> ");
         }
         printf("\n");
         previous_wasnt_empty = true;

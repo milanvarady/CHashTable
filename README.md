@@ -42,7 +42,7 @@ void print_all_key_value_pairs(int key, int value, void *user_data) {
     printf("Value: %d\n", value);
 }
 
-hash_table_foreach(table, print_all_key_value_pairs, NULL);
+hash_table_foreach(table, print_all_key_value_pairs, nullptr);
 
 // Save to file
 hash_table_save(table, "hash_table.txt");

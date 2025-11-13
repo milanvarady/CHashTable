@@ -63,7 +63,7 @@ bool hash_table_insert(HashTable* table, int key, int value);
  * @brief Get element from HashTable
  * @param table Pointer to HashTable object
  * @param key Key to retrieve
- * @return Entry object or NULL if the element wasn't found
+ * @return Entry object or nullptr if the element wasn't found
  */
 const Entry* hash_table_get(const HashTable* table, int key);
 
@@ -115,12 +115,12 @@ typedef enum {
  *
  * Instead of returning the table, it returns an error code.
  * The created hash table is returned via the `out_table` pointer.
- * On error, `out_table` is set to NULL (or an intermediate state).
+ * On error, `out_table` is set to nullptr (or an intermediate state).
  *
  * @param filename The path to the file to load.
  * @param out_table A pointer to a (HashTable*) variable. On success,
  * this will be set to point to the newly loaded table.
- * On failure, it will be set to NULL.
+ * On failure, it will be set to nullptr.
  * @return A HashTable_LoadError code indicating success (HT_LOAD_OK) or the type of failure.
  */
 HashTable_LoadError hash_table_load(const char* filename, HashTable** out_table);

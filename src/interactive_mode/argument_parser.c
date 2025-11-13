@@ -26,7 +26,7 @@ static StrToIntResult str_to_int(const char *str) {
         .success = false
     };
 
-    if (str == NULL) return result;
+    if (str == nullptr) return result;
 
     char *endptr;
     const int num = (int)strtol(str, &endptr, 10);
@@ -60,14 +60,14 @@ ParsedInput get_input(FILE *input_stream, FILE *output_stream) {
 
     // Get input from input stream
     char line[MAX_CMD_LEN];
-    if (fgets(line, sizeof(line), input_stream) == NULL) {
+    if (fgets(line, sizeof(line), input_stream) == nullptr) {
         print_error(output_stream, "Failed to read input");
         return result;
     }
 
     // Try to parse command
     const char *cmd_str = strtok(line, DELIMITERS);
-    if (cmd_str == NULL) {
+    if (cmd_str == nullptr) {
         print_error(output_stream, "No command");
         return result;
     }
@@ -89,7 +89,7 @@ ParsedInput get_input(FILE *input_stream, FILE *output_stream) {
     // If the command has a key param try to parse it
     if (!cmd_has_key_param) return result;
 
-    const char *arg_key_str = strtok(NULL, DELIMITERS);
+    const char *arg_key_str = strtok(nullptr, DELIMITERS);
     StrToIntResult key_conversion = str_to_int(arg_key_str);
     if (!key_conversion.success) {
         result.cmd = CMD_INVALID;
@@ -102,7 +102,7 @@ ParsedInput get_input(FILE *input_stream, FILE *output_stream) {
     // If the command has a value param try to parse it
     if (!cmd_has_value_param) return result;
 
-    const char *arg_value_str = strtok(NULL, DELIMITERS);
+    const char *arg_value_str = strtok(nullptr, DELIMITERS);
     StrToIntResult value_conversion = str_to_int(arg_value_str);
     if (!value_conversion.success) {
         result.cmd = CMD_INVALID;

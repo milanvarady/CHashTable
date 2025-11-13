@@ -44,9 +44,9 @@ test_next_prime(const MunitParameter params[], void* fixture) {
 }
 
 MunitTest utils[] = {
-    { "/hash_function_positive", test_hash_function_positive, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },
-    { "/hash_function_negative", test_hash_function_negative, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },
-    { "/is_prime", test_is_prime, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },
-    { "/next_prime", test_next_prime, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },
-    { NULL, NULL, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL }
+    { "/hash_function_positive", test_hash_function_positive, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr },
+    { "/hash_function_negative", test_hash_function_negative, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr },
+    { "/is_prime", test_is_prime, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr },
+    { "/next_prime", test_next_prime, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr },
+    { nullptr, nullptr, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr }
 };

@@ -32,14 +32,14 @@ Available commands:
 > get 1
 10
 > get 7
-NULL
+Entry doesn't exist
 > del 2
 > get 2
-NULL
+Entry doesn't exist
 > save
 > del 1
 > get 1
-NULL
+Entry doesn't exist
 > load
 > get 1
 10

@@ -90,8 +90,8 @@ test_invalid_arguments(const MunitParameter params[], void* fixture) {
 }
 
 MunitTest argument_parser[] = {
-    { "/commands_valid", test_valid_commands, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },
-    { "/arguments_valid", test_valid_arguments, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },
-    { "/arguments_invalid", test_invalid_arguments, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },
-    { NULL, NULL, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL }
+    { "/commands_valid", test_valid_commands, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr },
+    { "/arguments_valid", test_valid_arguments, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr },
+    { "/arguments_invalid", test_invalid_arguments, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr },
+    { nullptr, nullptr, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr }
 };

@@ -11,11 +11,11 @@
 
 Entry** create_buckets(size_t size) {
     Entry **buckets = (Entry **)malloc(sizeof(Entry *) * size);
-    if (buckets == NULL) return NULL;
+    if (buckets == nullptr) return nullptr;
 
-    // Set all buckets to NULL
+    // Set all buckets to nullptr
     for (size_t i = 0; i < size; i++) {
-        buckets[i] = NULL;
+        buckets[i] = nullptr;
     }
 
     return buckets;
@@ -24,10 +24,10 @@ Entry** create_buckets(size_t size) {
 HashTable* hash_table_create_with_size(size_t size) {
     // Allocate memory
     Entry **buckets = create_buckets(size);
-    if (buckets == NULL) return NULL;
+    if (buckets == nullptr) return nullptr;
 
     HashTable *hash_table = (HashTable *)malloc(sizeof(HashTable));
-    if (hash_table == NULL) return NULL;
+    if (hash_table == nullptr) return nullptr;
 
     // Create table with default size
     *hash_table = (HashTable){
@@ -41,18 +41,18 @@ HashTable* hash_table_create_with_size(size_t size) {
 }
 
 void clear_buckets(Entry** buckets, size_t size) {
-    if (buckets == NULL) return;
+    if (buckets == nullptr) return;
 
     for (size_t i = 0; i < size; i++) {
         Entry* head = buckets[i];
 
-        while (head != NULL){
+        while (head != nullptr){
             Entry *tmp = head;
             head = head->next;
             free(tmp);
         }
 
-        buckets[i] = NULL;
+        buckets[i] = nullptr;
     }
 }
 
@@ -67,7 +67,7 @@ void hash_table_resize(HashTable* table) {
     // Try to allocate new buckets
     Entry** new_buckets = create_buckets(new_size);
     // Silently fail
-    if (new_buckets == NULL) return;
+    if (new_buckets == nullptr) return;
 
     // Swap buckets
     Entry** old_buckets = table->buckets;
@@ -79,7 +79,7 @@ void hash_table_resize(HashTable* table) {
     // Rehash entries into new buckets
     for (size_t i = 0; i < old_size; i++) {
         Entry* bucket = old_buckets[i];
-        for (Entry* entry = bucket; entry != NULL; entry = entry->next) {
+        for (Entry* entry = bucket; entry != nullptr; entry = entry->next) {
             hash_table_insert(table, entry->key, entry->value);
         }
     }

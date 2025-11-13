@@ -93,12 +93,12 @@ test_collision_handling(const MunitParameter params[], void* fixture) {
 }
 
 MunitTest table_insert_get[] = {
-    { "/base", test_insert_and_get, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, NULL },
-    { "/null_table", test_insert_null_table, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },
-    { "/zero_key", test_zero_key, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, NULL },
-    { "/negative_keys", test_negative_keys, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, NULL },
-    { "/update_value", test_update_value, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, NULL },
-    { "/multiple_updates", test_multiple_updates, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, NULL },
-    { "/collision_handling", test_collision_handling, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, NULL },
-    { NULL, NULL, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL }
+    { "/base", test_insert_and_get, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, nullptr },
+    { "/null_table", test_insert_null_table, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr },
+    { "/zero_key", test_zero_key, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, nullptr },
+    { "/negative_keys", test_negative_keys, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, nullptr },
+    { "/update_value", test_update_value, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, nullptr },
+    { "/multiple_updates", test_multiple_updates, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, nullptr },
+    { "/collision_handling", test_collision_handling, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, nullptr },
+    { nullptr, nullptr, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr }
 };

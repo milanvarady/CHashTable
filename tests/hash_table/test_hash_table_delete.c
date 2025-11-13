@@ -60,7 +60,7 @@ test_delete_all(const MunitParameter params[], void* fixture) {
 }
 
 MunitTest table_delete[] = {
-    { "/base", test_delete, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, NULL },
-    { "/all", test_delete_all, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, NULL },
-    { NULL, NULL, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL }
+    { "/base", test_delete, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, nullptr },
+    { "/all", test_delete_all, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, nullptr },
+    { nullptr, nullptr, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr }
 };

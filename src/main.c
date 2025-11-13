@@ -28,7 +28,7 @@ static constexpr char SAVE_FILENAME[] = "interactive_mode_table.txt";
 
 int main(void) {
     HashTable* table = hash_table_create();
-    if (table == NULL) {
+    if (table == nullptr) {
         fprintf_color(stdout, ERROR_COLOR, "Failed to create hash table\n");
         exit(1);
     }
@@ -50,7 +50,7 @@ int main(void) {
 
             case CMD_GET:
                 const Entry *entry = hash_table_get(table, input.arg_key);
-                if (entry == NULL) fprintf_color(stdout, ERROR_COLOR, "Entry doesn't exist\n");
+                if (entry == nullptr) fprintf_color(stdout, ERROR_COLOR, "Entry doesn't exist\n");
                 else fprintf_color(stdout, OUTPUT_COLOR, "%d\n", entry->value);
                 break;
 
@@ -67,7 +67,7 @@ int main(void) {
                 break;
 
             case CMD_LOAD:
-                HashTable *loaded_table = NULL;
+                HashTable *loaded_table = nullptr;
                 HashTable_LoadError error = hash_table_load(SAVE_FILENAME, &loaded_table);
                 if (error != HT_LOAD_OK) {
                     fprintf_color(
