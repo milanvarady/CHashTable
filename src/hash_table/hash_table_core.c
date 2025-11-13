@@ -28,8 +28,8 @@ void hash_table_destroy(HashTable* table) {
     free(table);
 }
 
-void hash_table_insert(HashTable* table, int key, int value) {
-    if (table == NULL) return;
+bool hash_table_insert(HashTable* table, int key, int value) {
+    if (table == NULL) return false;
 
     const size_t hash = hash_function(key, table->size);
     Entry* bucket = table->buckets[hash];
@@ -38,7 +38,7 @@ void hash_table_insert(HashTable* table, int key, int value) {
     for (Entry* entry = bucket; entry != NULL; entry = entry->next) {
         if (entry->key == key) {
             entry->value = value;
-            return;
+            return true;
         }
     }
 
@@ -58,6 +58,7 @@ void hash_table_insert(HashTable* table, int key, int value) {
     if (table->count > table->load_threshold_count) {
         hash_table_resize(table);
     }
+    return true;
 }
 
 const Entry* hash_table_get(const HashTable* table, int key) {

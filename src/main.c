@@ -41,7 +41,11 @@ int main(void) {
 
         switch (input.cmd) {
             case CMD_ADD:
-                hash_table_insert(table, input.arg_key, input.arg_value);
+                bool add_success = hash_table_insert(table, input.arg_key, input.arg_value);
+                if (!add_success) {
+                    fprintf_color(stdout, ERROR_COLOR, "Hash table doesn't exist\n");
+                    is_running = false;
+                }
                 break;
 
             case CMD_GET:

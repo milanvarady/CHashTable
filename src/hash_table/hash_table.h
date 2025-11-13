@@ -6,8 +6,6 @@
 #ifndef CHASHTABLE_HASH_TABLE_H
 #define CHASHTABLE_HASH_TABLE_H
 
-#include <stdbool.h>
-
 /**
  * @brief A hash table entry object
  *
@@ -57,8 +55,9 @@ void hash_table_destroy(HashTable* table);
  * @param table Pointer to HashTable object
  * @param key The key to insert
  * @param value The value to insert
+ * @return true if insertion was successful
  */
-void hash_table_insert(HashTable* table, int key, int value);
+bool hash_table_insert(HashTable* table, int key, int value);
 
 /**
  * @brief Get element from HashTable
