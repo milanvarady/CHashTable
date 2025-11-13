@@ -91,7 +91,8 @@ $(document).ready(function(){initNavTree('main_8c.html',''); initResizable(); })
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">main.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -99,12 +100,14 @@ $(document).ready(function(){initNavTree('main_8c.html',''); initResizable(); })
 <p>Interactive program to play with the HashTable.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="hash__table_8h_source.html">hash_table/hash_table.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="interactive__mode_8h_source.html">interactive_mode/interactive_mode.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="fprintf__color_8h_source.html">fprintf_color/fprintf_color.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for main.c:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="main_8c__incl.svg" width="518" height="198"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8c__incl.svg" width="656" height="212"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -112,10 +115,77 @@ Functions</h2></td></tr>
 <tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe" id="r_a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top"><a id="a840291bc02cba5474a4cb46a9b9566fe" name="a840291bc02cba5474a4cb46a9b9566fe"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (void)</td></tr>
 <tr class="separator:a840291bc02cba5474a4cb46a9b9566fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a8ec02c0ed9522f4018c0261252511078" id="r_a8ec02c0ed9522f4018c0261252511078"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a8ec02c0ed9522f4018c0261252511078">WELCOME_MESSAGE</a> []</td></tr>
+<tr class="separator:a8ec02c0ed9522f4018c0261252511078"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af294a703dcf7ede251765b4a1e3c3a5a" id="r_af294a703dcf7ede251765b4a1e3c3a5a"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#af294a703dcf7ede251765b4a1e3c3a5a">HELP_MESSAGE</a> []</td></tr>
+<tr class="separator:af294a703dcf7ede251765b4a1e3c3a5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af05eca4869e8202036ef318570e9beda" id="r_af05eca4869e8202036ef318570e9beda"><td class="memItemLeft" align="right" valign="top"><a id="af05eca4869e8202036ef318570e9beda" name="af05eca4869e8202036ef318570e9beda"></a>
+static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><b>SAVE_FILENAME</b> [] = &quot;interactive_mode_table.txt&quot;</td></tr>
+<tr class="separator:af05eca4869e8202036ef318570e9beda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Interactive program to play with the HashTable. </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Variable Documentation</h2>
+<a id="af294a703dcf7ede251765b4a1e3c3a5a" name="af294a703dcf7ede251765b4a1e3c3a5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af294a703dcf7ede251765b4a1e3c3a5a">&#9670;&#160;</a></span>HELP_MESSAGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char HELP_MESSAGE[]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">    <span class="stringliteral">&quot;Available commands:\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;- `add {key} {value}`: adds a key-value pair to the table\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;- `get {key}`: get a value associated to the key\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;- `del {key}`: deletes an entry\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;- `save`: saves the current table\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;- `load`: loads the last saved table\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;- `print`: prints the table\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;- `exit`: exits interactive mode\n&quot;</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8ec02c0ed9522f4018c0261252511078" name="a8ec02c0ed9522f4018c0261252511078"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ec02c0ed9522f4018c0261252511078">&#9670;&#160;</a></span>WELCOME_MESSAGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char WELCOME_MESSAGE[]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">    <span class="stringliteral">&quot;CHashTable Interactive mode\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;Type &#39;help&#39; for available commands\n&quot;</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

@@ -9,6 +9,6 @@ var hash__table__internal_8h =
     [ "hash_table_resize", "hash__table__internal_8h.html#aca0a80a062935d3a89d6c87c17c8e369", null ],
     [ "is_prime", "hash__table__internal_8h.html#a948fa3ec8d71eba5a4e31b6f6ddff253", null ],
     [ "next_prime", "hash__table__internal_8h.html#ad3ece7e69e4d52592d5d7b95b787dd11", null ],
-    [ "HT_INITIAL_SIZE", "hash__table__internal_8h.html#a4d1ed036755813293bfd9fe5dd0eac66", null ],
-    [ "HT_LOAD_THRESHOLD", "hash__table__internal_8h.html#a8cc26091c6488b7471beeb9b94007351", null ]
+    [ "HT_INITIAL_SIZE", "hash__table__internal_8h.html#a5ee9c915e4c20e3984136649885eb5d0", null ],
+    [ "HT_LOAD_THRESHOLD", "hash__table__internal_8h.html#aa38fbc50242a0f9bbcd8d6469c739e00", null ]
 ];

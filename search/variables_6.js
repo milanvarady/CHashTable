@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['size_0',['size',['../structhash__table.html#aa0f108c8e8d1403c2f032cb412e6da66',1,'hash_table']]]
+  ['output_5fcolor_0',['OUTPUT_COLOR',['../interactive__mode_8h.html#a15a14d4996070e82234a17b3dea7778e',1,'interactive_mode.h']]]
 ];

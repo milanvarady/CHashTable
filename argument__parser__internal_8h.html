@@ -100,11 +100,11 @@ $(document).ready(function(){initNavTree('argument__parser__internal_8h.html',''
 <p>Argument parser internal API exposed for testing.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="interactive__mode_8h_source.html">interactive_mode.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="fprintf__color_8h_source.html">../printf_color/fprintf_color.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="fprintf__color_8h_source.html">../fprintf_color/fprintf_color.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for argument_parser_internal.h:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="argument__parser__internal_8h__incl.svg" width="336" height="212"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="argument__parser__internal_8h__incl.svg" width="244" height="212"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
@@ -129,7 +129,7 @@ constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_CMD_L
 constexpr char&#160;</td><td class="memItemRight" valign="bottom"><b>DELIMITERS</b> [] = &quot; \t\r\n&quot;</td></tr>
 <tr class="separator:a9b82a92987c5a9605d0466a842003c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fe4d16920e85e736914018fec38be41" id="r_a8fe4d16920e85e736914018fec38be41"><td class="memItemLeft" align="right" valign="top"><a id="a8fe4d16920e85e736914018fec38be41" name="a8fe4d16920e85e736914018fec38be41"></a>
-constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>CMD_COUNT</b> = 7</td></tr>
+constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>CMD_COUNT</b> = 8</td></tr>
 <tr class="separator:a8fe4d16920e85e736914018fec38be41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a768b963c9216c050455348ebbbc32c44" id="r_a768b963c9216c050455348ebbbc32c44"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structCommandMap.html">CommandMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="argument__parser__internal_8h.html#a768b963c9216c050455348ebbbc32c44">command_table</a> [CMD_COUNT]</td></tr>
 <tr class="memdesc:a768b963c9216c050455348ebbbc32c44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps command string to enum.  <br /></td></tr>
@@ -164,7 +164,8 @@ constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>CMD_COUNT
 <div class="line">    {<span class="stringliteral">&quot;save&quot;</span>, CMD_SAVE},</div>
 <div class="line">    {<span class="stringliteral">&quot;load&quot;</span>, CMD_LOAD},</div>
 <div class="line">    {<span class="stringliteral">&quot;print&quot;</span>, CMD_PRINT},</div>
-<div class="line">    {<span class="stringliteral">&quot;exit&quot;</span>, CMD_EXIT}</div>
+<div class="line">    {<span class="stringliteral">&quot;exit&quot;</span>, CMD_EXIT},</div>
+<div class="line">    {<span class="stringliteral">&quot;help&quot;</span>, CMD_HELP}</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p>Maps command string to enum. </p>
