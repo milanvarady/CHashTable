@@ -1,5 +1,5 @@
 /**
-* @file hash_table_io.c
+ * @file hash_table_io.c
  * @brief Persistence and print methods for HashTable
  */
 
@@ -8,8 +8,15 @@
 #include "hash_table.h"
 #include "hash_table_internal.h"
 
-void hash_table_save(const HashTable* table, const char* filename) {
+constexpr char VERSION[16] = "1.0";
 
+void hash_table_save(const HashTable* table, const char* filename) {
+    FILE *file_handle = fopen(filename, "w");
+
+    fprintf(file_handle, "CHashTable v%s\n", VERSION);
+    fprintf(file_handle, "%zu\n", table->count);
+
+    fclose(file_handle);
 }
 
 HashTable* hash_table_load(const char* filename) {

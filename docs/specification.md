@@ -78,6 +78,7 @@ The hash table can be saved and loaded into a `.txt` file.
 
 **File format**
 ```
+CHashTable vX.x
 count
 key1 value1
 key2 value2
@@ -85,7 +86,8 @@ key3 value3
 ...
 ```
 
-The `count` is the total number of key-value pairs.
+- Header with version
+- `count` is the total number of key-value pairs.
 
 ### Serialization
 

@@ -9,20 +9,25 @@
 #include "interactive_mode.h"
 #include "../printf_color/fprintf_color.h"
 
-#define MAX_CMD_LEN 128
-#define DELIMITERS " \t\r\n"
-#define CMD_COUNT 7
-
-/** @brief Default interactive mode promp color */
-static const ColorCode PROMPT_COLOR = COLOR_BLUE;
+constexpr size_t MAX_CMD_LEN = 128;
+constexpr char DELIMITERS[] = " \t\r\n";
+constexpr size_t CMD_COUNT = 7;
 
 /** @brief Maps command string to enum */
 typedef struct {
-    const char *cmd_name;
+    const char cmd_name[16];
     Command result_value;
 } CommandMap;
 
 /** @brief Maps command string to enum */
-extern const CommandMap command_table[CMD_COUNT];
+constexpr CommandMap command_table[CMD_COUNT] = {
+    {"add", CMD_ADD},
+    {"get", CMD_GET},
+    {"del", CMD_DEL},
+    {"save", CMD_SAVE},
+    {"load", CMD_LOAD},
+    {"print", CMD_PRINT},
+    {"exit", CMD_EXIT}
+};
 
 #endif //CHASHTABLE_ARGUMENT_PARSER_INTERNAL_H

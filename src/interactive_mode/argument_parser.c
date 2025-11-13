@@ -9,15 +9,8 @@
 
 #include "argument_parser_internal.h"
 
-const CommandMap command_table[CMD_COUNT] = {
-    {"add", CMD_ADD},
-    {"get", CMD_GET},
-    {"del", CMD_DEL},
-    {"save", CMD_SAVE},
-    {"load", CMD_LOAD},
-    {"print", CMD_PRINT},
-    {"exit", CMD_EXIT}
-};
+/** @brief Default interactive mode promp color */
+static constexpr ColorCode PROMPT_COLOR = COLOR_BLUE;
 
 /** @brief Result type for str_to_int() */
 typedef struct {

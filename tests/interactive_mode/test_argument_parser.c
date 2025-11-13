@@ -4,8 +4,8 @@
 #include "../munit.h"
 #include "../../src/interactive_mode/argument_parser_internal.h"
 
-# define INVALID_INPUTS_COUNT 10
-constexpr char invalid_inputs[INVALID_INPUTS_COUNT][32] = {
+static constexpr size_t INVALID_INPUTS_COUNT = 10;
+static constexpr char invalid_inputs[INVALID_INPUTS_COUNT][32] = {
     "add 1 a",
     "add a 1",
     "add a a",
@@ -18,8 +18,8 @@ constexpr char invalid_inputs[INVALID_INPUTS_COUNT][32] = {
     ""
 };
 
-#define VALID_INPUTS_COUNT 3
-constexpr char valid_inputs[VALID_INPUTS_COUNT][32] = {
+static constexpr size_t VALID_INPUTS_COUNT = 3;
+static constexpr char valid_inputs[VALID_INPUTS_COUNT][32] = {
     "add 1 2",
     "get 1",
     "del 1"
