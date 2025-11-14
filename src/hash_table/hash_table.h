@@ -77,6 +77,14 @@ const Entry* hash_table_get(const HashTable* table, int key);
 bool hash_table_delete(HashTable* table, int key);
 
 /**
+ * @brief Checks if two tables have the same key-value pairs
+ * @param table1 Table 1
+ * @param table2 Table 2
+ * @return true if all key-value paris match, false otherwise
+ */
+bool hash_table_equal(const HashTable *table1, const HashTable *table2);
+
+/**
  * @brief Iterates through each key-value pair in a HashTable
  * @param table Pointer to HashTable object
  * @param callback A callback function that will be run for every key value pair

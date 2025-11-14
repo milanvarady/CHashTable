@@ -96,6 +96,21 @@ bool hash_table_delete(HashTable* table, int key) {
     return false;
 }
 
+bool hash_table_equal(const HashTable *table1, const HashTable *table2) {
+    if (table1->count != table2->count) return false;
+
+    for (size_t i = 0; i < table1->size; i++) {
+        Entry* bucket = table1->buckets[i];
+        for (Entry* ht_1entry = bucket; ht_1entry != nullptr; ht_1entry = ht_1entry->next) {
+            const Entry *ht2_entry = hash_table_get(table2, ht_1entry->key);
+            if (ht2_entry == nullptr) return false;
+            if (ht_1entry->value != ht2_entry->value) return false;
+        }
+    }
+
+    return true;
+}
+
 void hash_table_foreach(const HashTable* table, void (*callback)(int key, int value, void*), void* user_data) {
     if (table == nullptr) return;
 

@@ -72,6 +72,13 @@ The foreach function accepts a callback function with signature:
 `void callback(int key, int value, void* user_data)`.
 The callback is invoked once for each key-value pair in the table.
 
+### Other methods
+
+The hash table has:
+- A **copy** method that copies all key-value pairs into a new table
+- An **equality** check method that determines if two tables have the same key-value pairs.
+For optimization, first the table entry counts are compared, and then the key value pairs.
+
 ## Data persistence
 
 The hash table can be saved and loaded into a `.txt` file. 
