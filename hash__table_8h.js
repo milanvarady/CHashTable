@@ -13,6 +13,7 @@ var hash__table_8h =
       [ "HT_LOAD_ERROR_PREMATURE_EOF", "hash__table_8h.html#ab07326d8bc46dc65587cf9d39dbc5960acaa38cdedce459d82d4d5ff1929d53b3", null ],
       [ "HT_LOAD_ERROR_MALFORMED_LINE", "hash__table_8h.html#ab07326d8bc46dc65587cf9d39dbc5960a92a047ecedde111c74ae1c33415580f9", null ]
     ] ],
+    [ "hash_table_copy", "hash__table_8h.html#a12799b68c7eed355cc958cdfb2d30fcf", null ],
     [ "hash_table_create", "hash__table_8h.html#a145041ed407574baae7b02482a62bcac", null ],
     [ "hash_table_delete", "hash__table_8h.html#a085d39918c30cf7ca3724c1f14a17bcd", null ],
     [ "hash_table_destroy", "hash__table_8h.html#a0bade541b10532f274e5ee78746e6196", null ],

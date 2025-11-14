@@ -128,6 +128,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a904f8782f9df7859761270d79f9402bf" id="r_a904f8782f9df7859761270d79f9402bf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash__table__core_8c.html#a904f8782f9df7859761270d79f9402bf">hash_table_equal</a> (const HashTable *table1, const HashTable *table2)</td></tr>
 <tr class="memdesc:a904f8782f9df7859761270d79f9402bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if two tables have the same key-value pairs.  <br /></td></tr>
 <tr class="separator:a904f8782f9df7859761270d79f9402bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac266dcf0b07763b2c1d69f8b8b9a107c" id="r_ac266dcf0b07763b2c1d69f8b8b9a107c"><td class="memItemLeft" align="right" valign="top"><a id="ac266dcf0b07763b2c1d69f8b8b9a107c" name="ac266dcf0b07763b2c1d69f8b8b9a107c"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>copy_callback</b> (int key, int value, void *user_data)</td></tr>
+<tr class="separator:ac266dcf0b07763b2c1d69f8b8b9a107c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12799b68c7eed355cc958cdfb2d30fcf" id="r_a12799b68c7eed355cc958cdfb2d30fcf"><td class="memItemLeft" align="right" valign="top">HashTable *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash__table__core_8c.html#a12799b68c7eed355cc958cdfb2d30fcf">hash_table_copy</a> (const HashTable *table)</td></tr>
+<tr class="memdesc:a12799b68c7eed355cc958cdfb2d30fcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a copy of a hash table.  <br /></td></tr>
+<tr class="separator:a12799b68c7eed355cc958cdfb2d30fcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b5f3fafdfff65f0c1a36c02ea712ca4" id="r_a8b5f3fafdfff65f0c1a36c02ea712ca4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash__table__core_8c.html#a8b5f3fafdfff65f0c1a36c02ea712ca4">hash_table_foreach</a> (const HashTable *table, void(*callback)(int key, int value, void *), void *user_data)</td></tr>
 <tr class="memdesc:a8b5f3fafdfff65f0c1a36c02ea712ca4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterates through each key-value pair in a HashTable.  <br /></td></tr>
 <tr class="separator:a8b5f3fafdfff65f0c1a36c02ea712ca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,6 +142,33 @@ Functions</h2></td></tr>
 <div class="textblock"><p>Core HashTable methods. </p>
 <p>Includes the create, destroy, insert, get, delete, and foreach HashTable methods </p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a12799b68c7eed355cc958cdfb2d30fcf" name="a12799b68c7eed355cc958cdfb2d30fcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12799b68c7eed355cc958cdfb2d30fcf">&#9670;&#160;</a></span>hash_table_copy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HashTable * hash_table_copy </td>
+          <td>(</td>
+          <td class="paramtype">const HashTable *&#160;</td>
+          <td class="paramname"><em>table</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a copy of a hash table. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table</td><td>Table to copy </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Copy of table or nullptr if the original table was also nullptr </dd></dl>
+
+</div>
+</div>
 <a id="a145041ed407574baae7b02482a62bcac" name="a145041ed407574baae7b02482a62bcac"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a145041ed407574baae7b02482a62bcac">&#9670;&#160;</a></span>hash_table_create()</h2>
 
