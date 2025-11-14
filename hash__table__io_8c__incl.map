@@ -1,18 +1,18 @@
 <map id="src/hash_table/hash_table_io.c" name="src/hash_table/hash_table_io.c">
-<area shape="rect" id="Node000001" title="Persistence and print methods for HashTable." alt="" coords="170,5,321,45"/>
+<area shape="rect" id="Node000001" title="Persistence and print methods for HashTable." alt="" coords="130,5,281,45"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,101,72,126"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,48,80,98,78,93,199,43"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="97,101,207,126"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="226,48,177,93,173,89,223,44"/>
-<area shape="rect" id="Node000004" href="$hash__table_8h.html" title="Public API for HashTable." alt="" coords="195,189,301,214"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="248,46,250,175,245,175,243,46"/>
-<area shape="rect" id="Node000005" href="$hash__table__internal_8h.html" title="Internal HashTable API and utilities." alt="" coords="283,101,445,126"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="273,43,338,90,335,95,270,48"/>
-<area shape="rect" id="Node000007" href="$interactive__mode_8h.html" title="Argument parser API for interactive mode." alt="" coords="469,93,621,133"/>
-<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="312,43,467,87,466,92,310,48"/>
-<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="350,128,276,182,273,178,347,124"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="327,189,401,214"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="367,126,367,174,361,174,361,126"/>
-<area shape="rect" id="Node000008" href="$fprintf__color_8h.html" title="Header file for fprintf_color() function." alt="" coords="467,181,624,221"/>
-<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="548,134,548,167,543,167,543,134"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,48,74,97,72,92,168,43"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="97,101,167,126"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="191,47,153,91,149,88,187,44"/>
+<area shape="rect" id="Node000004" href="$hash__table_8h.html" title="Public API for HashTable." alt="" coords="155,189,261,214"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="208,46,210,175,205,175,203,46"/>
+<area shape="rect" id="Node000005" href="$hash__table__internal_8h.html" title="Internal HashTable API and utilities." alt="" coords="243,101,405,126"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="233,43,298,90,295,95,230,48"/>
+<area shape="rect" id="Node000007" href="$interactive__mode_8h.html" title="Argument parser API for interactive mode." alt="" coords="429,93,581,133"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="272,43,427,87,426,92,270,48"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="310,128,236,182,233,178,307,124"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="287,189,361,214"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="327,126,327,174,321,174,321,126"/>
+<area shape="rect" id="Node000008" href="$fprintf__color_8h.html" title="Header file for fprintf_color() function." alt="" coords="427,181,584,221"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="508,134,508,167,503,167,503,134"/>
 </map>
