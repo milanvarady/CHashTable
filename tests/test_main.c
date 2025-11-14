@@ -6,6 +6,7 @@ extern MunitTest table_insert_get[];
 extern MunitTest table_delete[];
 extern MunitTest table_resize[];
 extern MunitTest table_foreach[];
+extern MunitTest table_persistence[];
 extern MunitTest utils[];
 extern MunitTest argument_parser[];
 
@@ -16,6 +17,7 @@ static MunitSuite sub_suites[] = {
     { "/delete", table_delete, nullptr, 1, MUNIT_SUITE_OPTION_NONE },
     { "/resize", table_resize, nullptr, 1, MUNIT_SUITE_OPTION_NONE },
     { "/foreach", table_foreach, nullptr, 1, MUNIT_SUITE_OPTION_NONE },
+    { "/persistence", table_persistence, nullptr, 1, MUNIT_SUITE_OPTION_NONE },
     { "/utils", utils, nullptr, 1, MUNIT_SUITE_OPTION_NONE },
     { "/parser", argument_parser, nullptr, 1, MUNIT_SUITE_OPTION_NONE },
     { nullptr, nullptr, nullptr, 0, MUNIT_SUITE_OPTION_NONE }

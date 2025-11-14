@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <mach/mach.h>
+#include <string.h>
 
 #include "hash_table.h"
 #include "hash_table_internal.h"
@@ -21,6 +21,7 @@ static void print_entry_to_file(int key, int value, void *file) {
 
 bool hash_table_save(const HashTable* table, const char* filename) {
     if (table == nullptr) return false;
+    if (strlen(filename) == 0) return false;
 
     FILE *file = fopen(filename, "w");
     if (file == nullptr) return false;
