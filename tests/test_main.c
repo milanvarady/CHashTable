@@ -8,6 +8,7 @@ extern MunitTest table_resize[];
 extern MunitTest table_foreach[];
 extern MunitTest table_persistence[];
 extern MunitTest table_equal[];
+extern MunitTest table_copy[];
 extern MunitTest utils[];
 extern MunitTest argument_parser[];
 
@@ -20,6 +21,7 @@ static MunitSuite sub_suites[] = {
     { "/foreach", table_foreach, nullptr, 1, MUNIT_SUITE_OPTION_NONE },
     { "/persistence", table_persistence, nullptr, 1, MUNIT_SUITE_OPTION_NONE },
     { "/equal", table_equal, nullptr, 1, MUNIT_SUITE_OPTION_NONE },
+    { "/copy", table_copy, nullptr, 1, MUNIT_SUITE_OPTION_NONE },
     { "/utils", utils, nullptr, 1, MUNIT_SUITE_OPTION_NONE },
     { "/parser", argument_parser, nullptr, 1, MUNIT_SUITE_OPTION_NONE },
     { nullptr, nullptr, nullptr, 0, MUNIT_SUITE_OPTION_NONE }

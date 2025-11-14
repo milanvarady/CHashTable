@@ -85,6 +85,13 @@ bool hash_table_delete(HashTable* table, int key);
 bool hash_table_equal(const HashTable *table1, const HashTable *table2);
 
 /**
+ * @brief Creates a copy of a hash table
+ * @param table Table to copy
+ * @return Copy of table or nullptr if the original table was also nullptr
+ */
+HashTable *hash_table_copy(const HashTable *table);
+
+/**
  * @brief Iterates through each key-value pair in a HashTable
  * @param table Pointer to HashTable object
  * @param callback A callback function that will be run for every key value pair

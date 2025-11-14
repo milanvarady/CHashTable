@@ -111,6 +111,20 @@ bool hash_table_equal(const HashTable *table1, const HashTable *table2) {
     return true;
 }
 
+static void copy_callback(int key, int value, void *user_data) {
+    HashTable *table = (HashTable *)(user_data);
+    hash_table_insert(table, key, value);
+}
+
+HashTable *hash_table_copy(const HashTable *table) {
+    if (table == nullptr) return nullptr;
+
+    HashTable *new_table = hash_table_create_with_size(table->size);
+    hash_table_foreach(table, copy_callback, new_table);
+
+    return new_table;
+}
+
 void hash_table_foreach(const HashTable* table, void (*callback)(int key, int value, void*), void* user_data) {
     if (table == nullptr) return;
 

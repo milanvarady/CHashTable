@@ -31,6 +31,7 @@ add_executable(CHashTable_tests
         tests/hash_table/test_hash_table_foreach.c
         tests/hash_table/test_hash_table_persistence.c
         tests/hash_table/test_hash_table_equal.c
+        tests/hash_table/test_hash_table_copy.c
         tests/hash_table/test_hash_table_utils.c
         tests/interactive_mode/test_argument_parser.c
         tests/test_main.c)
