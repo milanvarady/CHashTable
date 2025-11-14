@@ -24,7 +24,7 @@ add_executable(CHashTable_tests
         src/hash_table/hash_table_utils.c
         src/fprintf_color/fprintf_color.c
         src/interactive_mode/argument_parser.c
-        tests/hash_table/test_hash_table_create.c
+        tests/hash_table/test_hash_table_create_destroy.c
         tests/hash_table/test_hash_table_insert_get.c
         tests/hash_table/test_hash_table_resize.c
         tests/hash_table/test_hash_table_delete.c

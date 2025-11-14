@@ -13,7 +13,18 @@ test_create(const MunitParameter params[], void* fixture) {
     return MUNIT_OK;
 }
 
-MunitTest table_create[] = {
+static MunitResult
+test_destroy(const MunitParameter params[], void* fixture) {
+    HashTable* table = hash_table_create();
+
+    munit_assert_true(hash_table_destroy(table));
+    munit_assert_false(hash_table_destroy(nullptr));
+
+    return MUNIT_OK;
+}
+
+MunitTest table_create_destroy[] = {
     { "/create", test_create, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, nullptr },
+    { "/destroy", test_destroy, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr },
     { nullptr, nullptr, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr }
 };

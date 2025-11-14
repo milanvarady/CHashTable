@@ -1,7 +1,7 @@
 #include "munit.h"
 
 // Declare external test arrays
-extern MunitTest table_create[];
+extern MunitTest table_create_destroy[];
 extern MunitTest table_insert_get[];
 extern MunitTest table_delete[];
 extern MunitTest table_resize[];
@@ -12,7 +12,7 @@ extern MunitTest argument_parser[];
 
 // Create sub-suites
 static MunitSuite sub_suites[] = {
-    { "/create", table_create, nullptr, 1, MUNIT_SUITE_OPTION_NONE },
+    { "/create", table_create_destroy, nullptr, 1, MUNIT_SUITE_OPTION_NONE },
     { "/insert_get", table_insert_get, nullptr, 1, MUNIT_SUITE_OPTION_NONE },
     { "/delete", table_delete, nullptr, 1, MUNIT_SUITE_OPTION_NONE },
     { "/resize", table_resize, nullptr, 1, MUNIT_SUITE_OPTION_NONE },

@@ -44,8 +44,9 @@ HashTable* hash_table_create(void);
  * Completely frees all buckets and the hash table itself from memory
  *
  * @param table Hash table to free
+ * @return true if deletion happens, false if table is nullptr
  */
-void hash_table_destroy(HashTable* table);
+bool hash_table_destroy(HashTable* table);
 
 /**
  * @brief Inserts a key-value pair into a HashTable

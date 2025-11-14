@@ -15,8 +15,8 @@ HashTable* hash_table_create(void) {
     return hash_table_create_with_size(HT_INITIAL_SIZE);
 }
 
-void hash_table_destroy(HashTable* table) {
-    if (table == nullptr) return;
+bool hash_table_destroy(HashTable* table) {
+    if (table == nullptr) return false;
 
     // Free all entries
     clear_buckets(table->buckets, table->size);
@@ -26,6 +26,8 @@ void hash_table_destroy(HashTable* table) {
 
     // Free table
     free(table);
+
+    return true;
 }
 
 bool hash_table_insert(HashTable* table, int key, int value) {
