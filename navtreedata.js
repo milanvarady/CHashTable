@@ -25,11 +25,11 @@
 var NAVTREE =
 [
   [ "CHashTable", "index.html", [
-    [ "Implementation", "index.html#autotoc_md18", null ],
-    [ "Docs", "index.html#autotoc_md19", null ],
-    [ "Example usage", "index.html#autotoc_md20", null ],
-    [ "Compile", "index.html#autotoc_md21", null ],
-    [ "External tools used", "index.html#autotoc_md22", null ],
+    [ "Implementation", "index.html#autotoc_md19", null ],
+    [ "Docs", "index.html#autotoc_md20", null ],
+    [ "Example usage", "index.html#autotoc_md21", null ],
+    [ "Compile", "index.html#autotoc_md22", null ],
+    [ "External tools used", "index.html#autotoc_md23", null ],
     [ "Interactive mode", "md_docs_2interactive__mode.html", null ],
     [ "Specification", "md_docs_2specification.html", [
       [ "What is a hash table?", "md_docs_2specification.html#autotoc_md4", null ],
@@ -41,11 +41,12 @@ var NAVTREE =
         [ "Load factor calculation", "md_docs_2specification.html#autotoc_md10", null ],
         [ "Key-value storage", "md_docs_2specification.html#autotoc_md11", null ],
         [ "Insert, search, delete behavior", "md_docs_2specification.html#autotoc_md12", null ],
-        [ "Iteration", "md_docs_2specification.html#autotoc_md13", null ]
+        [ "Iteration", "md_docs_2specification.html#autotoc_md13", null ],
+        [ "Other methods", "md_docs_2specification.html#autotoc_md14", null ]
       ] ],
-      [ "Data persistence", "md_docs_2specification.html#autotoc_md14", [
-        [ "Serialization", "md_docs_2specification.html#autotoc_md15", null ],
-        [ "Deserialization", "md_docs_2specification.html#autotoc_md16", null ]
+      [ "Data persistence", "md_docs_2specification.html#autotoc_md15", [
+        [ "Serialization", "md_docs_2specification.html#autotoc_md16", null ],
+        [ "Deserialization", "md_docs_2specification.html#autotoc_md17", null ]
       ] ]
     ] ],
     [ "Data Structures", "annotated.html", [

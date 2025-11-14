@@ -94,17 +94,17 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_README"></a> Hashtable implemented in C for a university project.</p>
-<h1><a class="anchor" id="autotoc_md18"></a>
+<h1><a class="anchor" id="autotoc_md19"></a>
 Implementation</h1>
 <p>A simple hash table implementation in C with integer keys and values, using linked list chaining for collisions and dynamic resizing for performance.</p>
 <p>Read detailed <a class="el" href="md_docs_2specification.html">specification</a>.</p>
-<h1><a class="anchor" id="autotoc_md19"></a>
+<h1><a class="anchor" id="autotoc_md20"></a>
 Docs</h1>
 <ul>
 <li><a href="https://milanvarady.github.io/CHashTable/index.html">API docs</a></li>
 <li><a class="el" href="md_docs_2interactive__mode.html">Interactive mode</a></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md20"></a>
+<h1><a class="anchor" id="autotoc_md21"></a>
 Example usage</h1>
 <p>To use the hash table in a project include the <code>.c</code> and <code>.h</code> files from the <code>src</code> directory. Except <code><a class="el" href="main_8c.html" title="Interactive program to play with the HashTable.">main.c</a></code>. Then include the public API header.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="hash__table_8h.html">hash_table.h</a>&quot;</span></div>
@@ -148,12 +148,12 @@ Example usage</h1>
 <div class="ttc" id="ahash__table_8h_html_a145041ed407574baae7b02482a62bcac"><div class="ttname"><a href="hash__table_8h.html#a145041ed407574baae7b02482a62bcac">hash_table_create</a></div><div class="ttdeci">HashTable * hash_table_create(void)</div><div class="ttdoc">Creates a new empty HashTable object.</div><div class="ttdef"><b>Definition</b> hash_table_core.c:14</div></div>
 <div class="ttc" id="ahash__table_8h_html_a3776e0784840a9609f3922b1b95c59ec"><div class="ttname"><a href="hash__table_8h.html#a3776e0784840a9609f3922b1b95c59ec">hash_table_save</a></div><div class="ttdeci">bool hash_table_save(const HashTable *table, const char *filename)</div><div class="ttdoc">Serializes a HashTable object into a .txt file.</div><div class="ttdef"><b>Definition</b> hash_table_io.c:22</div></div>
 <div class="ttc" id="ahash__table_8h_html_a8697ced64d6a6606f38717377e532a68"><div class="ttname"><a href="hash__table_8h.html#a8697ced64d6a6606f38717377e532a68">hash_table_print</a></div><div class="ttdeci">void hash_table_print(const HashTable *table, bool print_empty_buckets)</div><div class="ttdoc">Print a HashTable for debugging.</div><div class="ttdef"><b>Definition</b> hash_table_io.c:159</div></div>
-<div class="ttc" id="ahash__table_8h_html_a8b5f3fafdfff65f0c1a36c02ea712ca4"><div class="ttname"><a href="hash__table_8h.html#a8b5f3fafdfff65f0c1a36c02ea712ca4">hash_table_foreach</a></div><div class="ttdeci">void hash_table_foreach(const HashTable *table, void(*callback)(int key, int value, void *), void *user_data)</div><div class="ttdoc">Iterates through each key-value pair in a HashTable.</div><div class="ttdef"><b>Definition</b> hash_table_core.c:99</div></div>
+<div class="ttc" id="ahash__table_8h_html_a8b5f3fafdfff65f0c1a36c02ea712ca4"><div class="ttname"><a href="hash__table_8h.html#a8b5f3fafdfff65f0c1a36c02ea712ca4">hash_table_foreach</a></div><div class="ttdeci">void hash_table_foreach(const HashTable *table, void(*callback)(int key, int value, void *), void *user_data)</div><div class="ttdoc">Iterates through each key-value pair in a HashTable.</div><div class="ttdef"><b>Definition</b> hash_table_core.c:114</div></div>
 <div class="ttc" id="ahash__table_8h_html_a8d53f49b5d48520f25043c0e1e77f9cc"><div class="ttname"><a href="hash__table_8h.html#a8d53f49b5d48520f25043c0e1e77f9cc">hash_table_get</a></div><div class="ttdeci">const Entry * hash_table_get(const HashTable *table, int key)</div><div class="ttdoc">Get element from HashTable.</div><div class="ttdef"><b>Definition</b> hash_table_core.c:66</div></div>
 <div class="ttc" id="ahash__table_8h_html_ac3c9737f9417f37f807ab6c03b00d1d9"><div class="ttname"><a href="hash__table_8h.html#ac3c9737f9417f37f807ab6c03b00d1d9">hash_table_insert</a></div><div class="ttdeci">bool hash_table_insert(HashTable *table, int key, int value)</div><div class="ttdoc">Inserts a key-value pair into a HashTable.</div><div class="ttdef"><b>Definition</b> hash_table_core.c:33</div></div>
 <div class="ttc" id="ahash__table_8h_html_afdc97992d3940a4cc9a8f8945ace6e48"><div class="ttname"><a href="hash__table_8h.html#afdc97992d3940a4cc9a8f8945ace6e48">hash_table_load</a></div><div class="ttdeci">HashTable_LoadError hash_table_load(const char *filename, HashTable **out_table)</div><div class="ttdoc">Loads a hash table from a specified file.</div><div class="ttdef"><b>Definition</b> hash_table_io.c:42</div></div>
 <div class="ttc" id="astructentry_html"><div class="ttname"><a href="structentry.html">entry</a></div><div class="ttdoc">A hash table entry object.</div><div class="ttdef"><b>Definition</b> hash_table.h:14</div></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md21"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md22"></a>
 Compile</h1>
 <p>Compile using <b>CMake</b>.</p>
 <p><b>Compile:</b> </p><div class="fragment"><div class="line">mkdir build</div>
@@ -162,7 +162,7 @@ Compile</h1>
 <div class="line">make</div>
 </div><!-- fragment --><p><b>Run interactive mode:</b> </p><div class="fragment"><div class="line">./CHashTable</div>
 </div><!-- fragment --><p><b>Run tests:</b> </p><div class="fragment"><div class="line">./CHashTable_tests</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md22"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md23"></a>
 External tools used</h1>
 <ul>
 <li>Tests use the <a href="https://nemequ.github.io/munit/">µnit</a> framework</li>

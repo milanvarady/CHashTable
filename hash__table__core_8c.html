@@ -125,6 +125,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a085d39918c30cf7ca3724c1f14a17bcd" id="r_a085d39918c30cf7ca3724c1f14a17bcd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash__table__core_8c.html#a085d39918c30cf7ca3724c1f14a17bcd">hash_table_delete</a> (HashTable *table, int key)</td></tr>
 <tr class="memdesc:a085d39918c30cf7ca3724c1f14a17bcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete entry from HashTable.  <br /></td></tr>
 <tr class="separator:a085d39918c30cf7ca3724c1f14a17bcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a904f8782f9df7859761270d79f9402bf" id="r_a904f8782f9df7859761270d79f9402bf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash__table__core_8c.html#a904f8782f9df7859761270d79f9402bf">hash_table_equal</a> (const HashTable *table1, const HashTable *table2)</td></tr>
+<tr class="memdesc:a904f8782f9df7859761270d79f9402bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if two tables have the same key-value pairs.  <br /></td></tr>
+<tr class="separator:a904f8782f9df7859761270d79f9402bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b5f3fafdfff65f0c1a36c02ea712ca4" id="r_a8b5f3fafdfff65f0c1a36c02ea712ca4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash__table__core_8c.html#a8b5f3fafdfff65f0c1a36c02ea712ca4">hash_table_foreach</a> (const HashTable *table, void(*callback)(int key, int value, void *), void *user_data)</td></tr>
 <tr class="memdesc:a8b5f3fafdfff65f0c1a36c02ea712ca4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterates through each key-value pair in a HashTable.  <br /></td></tr>
 <tr class="separator:a8b5f3fafdfff65f0c1a36c02ea712ca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -218,6 +221,44 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if deletion happens, false if table is nullptr </dd></dl>
+
+</div>
+</div>
+<a id="a904f8782f9df7859761270d79f9402bf" name="a904f8782f9df7859761270d79f9402bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a904f8782f9df7859761270d79f9402bf">&#9670;&#160;</a></span>hash_table_equal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool hash_table_equal </td>
+          <td>(</td>
+          <td class="paramtype">const HashTable *&#160;</td>
+          <td class="paramname"><em>table1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const HashTable *&#160;</td>
+          <td class="paramname"><em>table2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if two tables have the same key-value pairs. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table1</td><td>Table 1 </td></tr>
+    <tr><td class="paramname">table2</td><td>Table 2 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if all key-value paris match, false otherwise </dd></dl>
 
 </div>
 </div>

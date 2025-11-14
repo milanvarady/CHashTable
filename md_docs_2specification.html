@@ -141,7 +141,13 @@ Insert, search, delete behavior</h2>
 <h2><a class="anchor" id="autotoc_md13"></a>
 Iteration</h2>
 <p>The hash table has a foreach function that iterates over all key-value pairs. The iteration order is not guaranteed (depends on hash function and bucket order). The foreach function accepts a callback function with signature: <code>void callback(int key, int value, void* user_data)</code>. The callback is invoked once for each key-value pair in the table.</p>
-<h1><a class="anchor" id="autotoc_md14"></a>
+<h2><a class="anchor" id="autotoc_md14"></a>
+Other methods</h2>
+<p>The hash table has:</p><ul>
+<li>A <b>copy</b> method that copies all key-value pairs into a new table</li>
+<li>An <b>equality</b> check method that determines if two tables have the same key-value pairs. For optimization, first the table entry counts are compared, and then the key value pairs.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md15"></a>
 Data persistence</h1>
 <p>The hash table can be saved and loaded into a <code>.txt</code> file.</p>
 <p><b>File format</b> </p><div class="fragment"><div class="line">CHashTable vX.x</div>
@@ -154,10 +160,10 @@ Data persistence</h1>
 <li>Header with version</li>
 <li><code>count</code> is the total number of key-value pairs.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md15"></a>
+<h2><a class="anchor" id="autotoc_md16"></a>
 Serialization</h2>
 <p>The foreach function iterates over all key-value pairs and writes them to the file.</p>
-<h2><a class="anchor" id="autotoc_md16"></a>
+<h2><a class="anchor" id="autotoc_md17"></a>
 Deserialization</h2>
 <ol type="1">
 <li>Read the count from the first line</li>
