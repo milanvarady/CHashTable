@@ -11,11 +11,11 @@
 #include "hash_table_internal.h"
 #include "../debugmalloc/debugmalloc.h"
 
-HashTable* hash_table_create(void) {
+HashTable *hash_table_create(void) {
     return hash_table_create_with_size(HT_INITIAL_SIZE);
 }
 
-bool hash_table_destroy(HashTable* table) {
+bool hash_table_destroy(HashTable *table) {
     if (table == nullptr) return false;
 
     // Free all entries
@@ -30,14 +30,14 @@ bool hash_table_destroy(HashTable* table) {
     return true;
 }
 
-bool hash_table_insert(HashTable* table, int key, int value) {
+bool hash_table_insert(HashTable *table, int key, int value) {
     if (table == nullptr) return false;
 
     const size_t hash = hash_function(key, table->size);
-    Entry* bucket = table->buckets[hash];
+    Entry *bucket = table->buckets[hash];
 
     // If the key already exists, modify it
-    for (Entry* entry = bucket; entry != nullptr; entry = entry->next) {
+    for (Entry *entry = bucket; entry != nullptr; entry = entry->next) {
         if (entry->key == key) {
             entry->value = value;
             return true;
@@ -45,7 +45,7 @@ bool hash_table_insert(HashTable* table, int key, int value) {
     }
 
     // Else prepend a new entry to the head of the bucket
-    Entry* new_entry = (Entry *)malloc(sizeof(Entry));
+    Entry *new_entry = (Entry *) malloc(sizeof(Entry));
     *new_entry = (Entry){
         .key = key,
         .value = value,
@@ -63,13 +63,13 @@ bool hash_table_insert(HashTable* table, int key, int value) {
     return true;
 }
 
-const Entry* hash_table_get(const HashTable* table, int key) {
+const Entry *hash_table_get(const HashTable *table, int key) {
     if (table == nullptr) return nullptr;
 
     const size_t hash = hash_function(key, table->size);
-    const Entry* bucket = table->buckets[hash];
+    const Entry *bucket = table->buckets[hash];
 
-    for (const Entry* entry = bucket; entry != nullptr; entry = entry->next) {
+    for (const Entry *entry = bucket; entry != nullptr; entry = entry->next) {
         if (entry->key == key) {
             return entry;
         }
@@ -78,14 +78,14 @@ const Entry* hash_table_get(const HashTable* table, int key) {
     return nullptr;
 }
 
-bool hash_table_delete(HashTable* table, int key) {
+bool hash_table_delete(HashTable *table, int key) {
     if (table == nullptr) return false;
 
     const size_t hash = hash_function(key, table->size);
 
-    for (Entry** indirect = &table->buckets[hash]; *indirect != nullptr; indirect = &(*indirect)->next) {
+    for (Entry **indirect = &table->buckets[hash]; *indirect != nullptr; indirect = &(*indirect)->next) {
         if ((*indirect)->key == key) {
-            Entry* to_delete = *indirect;
+            Entry *to_delete = *indirect;
             *indirect = to_delete->next;
             free(to_delete);
             table->count--;
@@ -100,8 +100,8 @@ bool hash_table_equal(const HashTable *table1, const HashTable *table2) {
     if (table1->count != table2->count) return false;
 
     for (size_t i = 0; i < table1->size; i++) {
-        Entry* bucket = table1->buckets[i];
-        for (Entry* ht_1entry = bucket; ht_1entry != nullptr; ht_1entry = ht_1entry->next) {
+        Entry *bucket = table1->buckets[i];
+        for (Entry *ht_1entry = bucket; ht_1entry != nullptr; ht_1entry = ht_1entry->next) {
             const Entry *ht2_entry = hash_table_get(table2, ht_1entry->key);
             if (ht2_entry == nullptr) return false;
             if (ht_1entry->value != ht2_entry->value) return false;
@@ -112,7 +112,7 @@ bool hash_table_equal(const HashTable *table1, const HashTable *table2) {
 }
 
 static void copy_callback(int key, int value, void *user_data) {
-    HashTable *table = (HashTable *)(user_data);
+    HashTable *table = (HashTable *) (user_data);
     hash_table_insert(table, key, value);
 }
 
@@ -125,12 +125,12 @@ HashTable *hash_table_copy(const HashTable *table) {
     return new_table;
 }
 
-void hash_table_foreach(const HashTable* table, void (*callback)(int key, int value, void*), void* user_data) {
+void hash_table_foreach(const HashTable *table, void (*callback)(int key, int value, void *), void *user_data) {
     if (table == nullptr) return;
 
     for (size_t i = 0; i < table->size; i++) {
-        Entry* bucket = table->buckets[i];
-        for (Entry* entry = bucket; entry != nullptr; entry = entry->next) {
+        Entry *bucket = table->buckets[i];
+        for (Entry *entry = bucket; entry != nullptr; entry = entry->next) {
             callback(entry->key, entry->value, user_data);
         }
     }

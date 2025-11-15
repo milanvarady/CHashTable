@@ -15,11 +15,11 @@ static constexpr size_t MAX_LINE = 256;
 static constexpr char HEADER_PREFIX[] = "CHashTable v";
 
 static void print_entry_to_file(int key, int value, void *file) {
-    file = (FILE *)file;
+    file = (FILE *) file;
     fprintf(file, "%d=%d\n", key, value);
 }
 
-bool hash_table_save(const HashTable* table, const char* filename) {
+bool hash_table_save(const HashTable *table, const char *filename) {
     if (table == nullptr) return false;
     if (strlen(filename) == 0) return false;
 
@@ -39,7 +39,7 @@ bool hash_table_save(const HashTable* table, const char* filename) {
 /**
  * @brief Loads a hash table from a specified file.
  */
-HashTable_LoadError hash_table_load(const char* filename, HashTable** out_table) {
+HashTable_LoadError hash_table_load(const char *filename, HashTable **out_table) {
     // Initialize out_table to nullptr in case of early failure
     *out_table = nullptr;
 
@@ -78,7 +78,7 @@ HashTable_LoadError hash_table_load(const char* filename, HashTable** out_table)
     }
 
     // 5. Create the table
-    size_t initial_size = (size_t)((double)count / HT_LOAD_THRESHOLD);
+    size_t initial_size = (size_t) ((double) count / HT_LOAD_THRESHOLD);
     initial_size = initial_size < HT_INITIAL_SIZE ? HT_INITIAL_SIZE : next_prime(initial_size);
     table = hash_table_create_with_size(initial_size);
 
@@ -131,7 +131,7 @@ cleanup:
 /**
  * @brief Converts a hash table load error code into a static, human-readable string.
  */
-const char* hash_table_error_string(HashTable_LoadError error_code) {
+const char *hash_table_error_string(HashTable_LoadError error_code) {
     switch (error_code) {
         case HT_LOAD_OK:
             return "Success: Hash table loaded successfully.";
@@ -156,7 +156,7 @@ const char* hash_table_error_string(HashTable_LoadError error_code) {
     }
 }
 
-void hash_table_print(const HashTable* table, bool print_empty_buckets) {
+void hash_table_print(const HashTable *table, bool print_empty_buckets) {
     if (table == nullptr) {
         fprintf_color(stdout, ERROR_COLOR, "Table is nullptr!");
         return;
@@ -172,7 +172,7 @@ void hash_table_print(const HashTable* table, bool print_empty_buckets) {
     bool previous_wasnt_empty = false;
 
     for (size_t i = 0; i < size; i++) {
-        Entry* bucket = table->buckets[i];
+        Entry *bucket = table->buckets[i];
         if (bucket == nullptr && !print_empty_buckets) {
             if (i != 0 && i != size - 1 && previous_wasnt_empty) {
                 printf("...\n");
@@ -189,7 +189,7 @@ void hash_table_print(const HashTable* table, bool print_empty_buckets) {
             continue;
         }
 
-        for (Entry* entry = bucket; entry != nullptr; entry = entry->next) {
+        for (Entry *entry = bucket; entry != nullptr; entry = entry->next) {
             printf("(%d, %d)", entry->key, entry->value);
             if (entry->next != nullptr) printf(" -> ");
         }

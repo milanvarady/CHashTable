@@ -26,10 +26,10 @@ static constexpr char valid_inputs[VALID_INPUTS_COUNT][32] = {
 };
 
 static ParsedInput mock_input(const char *input) {
-    FILE* dev_null = fopen("/dev/null", "w");
+    FILE *dev_null = fopen("/dev/null", "w");
     munit_assert_not_null(dev_null);
 
-    FILE* test_stream = tmpfile();
+    FILE *test_stream = tmpfile();
     munit_assert_not_null(test_stream);
 
     char mock_input[32];
@@ -47,7 +47,7 @@ static ParsedInput mock_input(const char *input) {
 }
 
 static MunitResult
-test_valid_commands(const MunitParameter params[], void* fixture) {
+test_valid_commands(const MunitParameter params[], void *fixture) {
     for (int i = 0; i < VALID_INPUTS_COUNT; i++) {
         char input[32];
         sprintf(input, "%s %d %d\n", command_table[i].cmd_name, 1, 2);
@@ -61,7 +61,7 @@ test_valid_commands(const MunitParameter params[], void* fixture) {
 }
 
 static MunitResult
-test_valid_arguments(const MunitParameter params[], void* fixture) {
+test_valid_arguments(const MunitParameter params[], void *fixture) {
     // Test key argument
     for (int i = 0; i < VALID_INPUTS_COUNT; i++) {
         ParsedInput result = mock_input(valid_inputs[i]);
@@ -79,7 +79,7 @@ test_valid_arguments(const MunitParameter params[], void* fixture) {
 }
 
 static MunitResult
-test_invalid_arguments(const MunitParameter params[], void* fixture) {
+test_invalid_arguments(const MunitParameter params[], void *fixture) {
     for (int i = 0; i < INVALID_INPUTS_COUNT; i++) {
         ParsedInput result = mock_input(invalid_inputs[i]);
 
@@ -90,8 +90,8 @@ test_invalid_arguments(const MunitParameter params[], void* fixture) {
 }
 
 MunitTest argument_parser[] = {
-    { "/commands_valid", test_valid_commands, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr },
-    { "/arguments_valid", test_valid_arguments, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr },
-    { "/arguments_invalid", test_invalid_arguments, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr },
-    { nullptr, nullptr, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr }
+    {"/commands_valid", test_valid_commands, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr},
+    {"/arguments_valid", test_valid_arguments, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr},
+    {"/arguments_invalid", test_invalid_arguments, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr},
+    {nullptr, nullptr, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr}
 };

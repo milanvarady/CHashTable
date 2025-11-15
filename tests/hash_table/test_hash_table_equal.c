@@ -2,7 +2,7 @@
 #include "../test_utils.h"
 
 static MunitResult
-test_table_eq(const MunitParameter params[], void* fixture) {
+test_table_eq(const MunitParameter params[], void *fixture) {
     HashTable *table_arr[2];
 
     for (int i = 0; i < 2; i++) {
@@ -23,6 +23,6 @@ test_table_eq(const MunitParameter params[], void* fixture) {
 }
 
 MunitTest table_equal[] = {
-    { "/equal", test_table_eq, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr },
-    { nullptr, nullptr, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr }
+    {"/equal", test_table_eq, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr},
+    {nullptr, nullptr, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr}
 };

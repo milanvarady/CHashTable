@@ -5,8 +5,8 @@
 #include "../../src/hash_table/hash_table.h"
 
 static MunitResult
-test_save_errors(const MunitParameter params[], void* fixture) {
-    HashTable* table = (HashTable*)fixture;
+test_save_errors(const MunitParameter params[], void *fixture) {
+    HashTable *table = (HashTable *) fixture;
 
     munit_assert_false(hash_table_save(nullptr, "a.txt"));
     munit_assert_false(hash_table_save(table, ""));
@@ -15,8 +15,8 @@ test_save_errors(const MunitParameter params[], void* fixture) {
 }
 
 static MunitResult
-test_save_success(const MunitParameter params[], void* fixture) {
-    HashTable* table = (HashTable*)fixture;
+test_save_success(const MunitParameter params[], void *fixture) {
+    HashTable *table = (HashTable *) fixture;
 
     hash_table_insert(table, 1, 2);
     hash_table_insert(table, 2, 3);
@@ -31,7 +31,7 @@ test_save_success(const MunitParameter params[], void* fixture) {
 }
 
 static MunitResult
-test_load_errors(const MunitParameter params[], void* fixture) {
+test_load_errors(const MunitParameter params[], void *fixture) {
     HashTable *table = nullptr;
 
     munit_assert_int(
@@ -76,7 +76,7 @@ test_load_errors(const MunitParameter params[], void* fixture) {
 }
 
 static MunitResult
-test_load_success(const MunitParameter params[], void* fixture) {
+test_load_success(const MunitParameter params[], void *fixture) {
     HashTable *table = nullptr;
 
     munit_assert_int(
@@ -100,9 +100,9 @@ test_load_success(const MunitParameter params[], void* fixture) {
 }
 
 MunitTest table_persistence[] = {
-    { "/save_error", test_save_errors, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, nullptr },
-    { "/save_success", test_save_success, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, nullptr },
-    { "/load_error", test_load_errors, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr },
-    { "/load_success", test_load_success, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr },
-    { nullptr, nullptr, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr }
+    {"/save_error", test_save_errors, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, nullptr},
+    {"/save_success", test_save_success, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, nullptr},
+    {"/load_error", test_load_errors, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr},
+    {"/load_success", test_load_success, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr},
+    {nullptr, nullptr, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr}
 };

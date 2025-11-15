@@ -16,7 +16,7 @@ static const char* colors[] = {
     [COLOR_BOLD_RED] = "\033[1;31m"
 };
 
-void fprintf_color(FILE *stream, ColorCode color_code, const char* format, ...) {
+void fprintf_color(FILE *stream, ColorCode color_code, const char *format, ...) {
     printf("%s", colors[color_code]);
 
     va_list args;

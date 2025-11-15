@@ -41,21 +41,21 @@ size_t calc_load_threshold_count(size_t size);
  * @param size Table size
  * @return Pointer to a dynamically allocated HashTable object
  */
-HashTable* hash_table_create_with_size(size_t size);
+HashTable *hash_table_create_with_size(size_t size);
 
 /**
  * @brief Creates a dynamically allocated bucket array with a set size
  * @param size Table size
  * @return Pointer to the bucket array
  */
-Entry** create_buckets(size_t size);
+Entry **create_buckets(size_t size);
 
 /**
  * @brief Frees all entries inside a bucket array
  * @param buckets Bucket array
  * @param size Size of the bucket array
  */
-void clear_buckets(Entry** buckets, size_t size);
+void clear_buckets(Entry **buckets, size_t size);
 
 /**
  * @brief Resizes the HashTable
@@ -68,7 +68,7 @@ void clear_buckets(Entry** buckets, size_t size);
  *
  * @param table Pointer to HashTable object
  */
-void hash_table_resize(HashTable* table);
+void hash_table_resize(HashTable *table);
 
 /**
  * @brief Hash function using division method

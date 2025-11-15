@@ -3,7 +3,7 @@
 
 static MunitResult
 test_delete(const MunitParameter params[], void* fixture) {
-    HashTable* table = (HashTable*)fixture;
+    HashTable *table = (HashTable *) fixture;
 
     // Test with multiple values
     for (int i = 0; i < 5; i++) {

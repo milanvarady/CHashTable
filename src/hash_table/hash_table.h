@@ -43,7 +43,7 @@ typedef struct hash_table HashTable;
  * @return Pointer to empty HashTable
  * @related HashTable
  */
-HashTable* hash_table_create(void);
+HashTable *hash_table_create(void);
 
 /**
  * @brief Frees a HashTable from memory
@@ -54,7 +54,7 @@ HashTable* hash_table_create(void);
  * @return true if deletion happens, false if table is nullptr
  * @related HashTable
  */
-bool hash_table_destroy(HashTable* table);
+bool hash_table_destroy(HashTable *table);
 
 /**
  * @brief Inserts a key-value pair into a HashTable
@@ -67,7 +67,7 @@ bool hash_table_destroy(HashTable* table);
  * @return true if insertion was successful
  * @related HashTable
  */
-bool hash_table_insert(HashTable* table, int key, int value);
+bool hash_table_insert(HashTable *table, int key, int value);
 
 /**
  * @brief Get element from HashTable
@@ -76,7 +76,7 @@ bool hash_table_insert(HashTable* table, int key, int value);
  * @return Entry object or nullptr if the element wasn't found
  * @related HashTable
  */
-const Entry* hash_table_get(const HashTable* table, int key);
+const Entry *hash_table_get(const HashTable *table, int key);
 
 /**
  * @brief Delete entry from HashTable
@@ -85,7 +85,7 @@ const Entry* hash_table_get(const HashTable* table, int key);
  * @return true if the deletion was successful
  * @related HashTable
  */
-bool hash_table_delete(HashTable* table, int key);
+bool hash_table_delete(HashTable *table, int key);
 
 /**
  * @brief Checks if two tables have the same key-value pairs
@@ -111,7 +111,7 @@ HashTable *hash_table_copy(const HashTable *table);
  * @param user_data Generic user data that is injected into the callback
  * @related HashTable
  */
-void hash_table_foreach(const HashTable* table, void (*callback)(int key, int value, void*), void* user_data);
+void hash_table_foreach(const HashTable *table, void (*callback)(int key, int value, void *), void *user_data);
 
 /**
  * @brief Serializes a HashTable object into a .txt file
@@ -123,7 +123,7 @@ void hash_table_foreach(const HashTable* table, void (*callback)(int key, int va
  * @return Success
  * @related HashTable
  */
-bool hash_table_save(const HashTable* table, const char* filename);
+bool hash_table_save(const HashTable *table, const char *filename);
 
 /**
  * @enum HashTable_LoadError
@@ -156,7 +156,7 @@ typedef enum {
  * @return A HashTable_LoadError code indicating success (HT_LOAD_OK) or the type of failure.
  * @related HashTable
  */
-HashTable_LoadError hash_table_load(const char* filename, HashTable** out_table);
+HashTable_LoadError hash_table_load(const char *filename, HashTable **out_table);
 
 /**
  * @brief Converts a hash table load error code into a static, human-readable string.
@@ -165,7 +165,7 @@ HashTable_LoadError hash_table_load(const char* filename, HashTable** out_table)
  * @return A constant string describing the error.
  * @related HashTable
  */
-const char* hash_table_error_string(HashTable_LoadError error_code);
+const char *hash_table_error_string(HashTable_LoadError error_code);
 
 /**
  * @brief Print a HashTable for debugging
@@ -176,7 +176,7 @@ const char* hash_table_error_string(HashTable_LoadError error_code);
  * @param print_empty_buckets If false empty buckets are replaced with "...", more concise
  * @related HashTable
  */
-void hash_table_print(const HashTable* table, bool print_empty_buckets);
+void hash_table_print(const HashTable *table, bool print_empty_buckets);
 
 /** @} */ // End of the hash_table Doxygen group
 

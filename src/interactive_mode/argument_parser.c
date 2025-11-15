@@ -29,7 +29,7 @@ static StrToIntResult str_to_int(const char *str) {
     if (str == nullptr) return result;
 
     char *endptr;
-    const int num = (int)strtol(str, &endptr, 10);
+    const int num = (int) strtol(str, &endptr, 10);
 
     // No digits were found at the beginning of the string
     if (endptr == str) return result;

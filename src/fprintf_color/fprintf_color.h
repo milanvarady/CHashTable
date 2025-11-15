@@ -23,6 +23,6 @@ typedef enum {
  * @param format The printf-style format string
  * @param ...    The variable arguments for the format string.
  */
-void fprintf_color(FILE *stream, ColorCode color_code, const char* format, ...);
+void fprintf_color(FILE *stream, ColorCode color_code, const char *format, ...);
 
 #endif //CHASHTABLE_PRINTF_COLOR_H

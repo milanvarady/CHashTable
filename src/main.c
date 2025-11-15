@@ -11,23 +11,23 @@
 #include "fprintf_color/fprintf_color.h"
 
 static constexpr char WELCOME_MESSAGE[] =
-    "CHashTable Interactive mode\n"
-    "Type 'help' for available commands\n";
+        "CHashTable Interactive mode\n"
+        "Type 'help' for available commands\n";
 
 static constexpr char HELP_MESSAGE[] =
-    "Available commands:\n"
-    "- `add {key} {value}`: adds a key-value pair to the table\n"
-    "- `get {key}`: get a value associated to the key\n"
-    "- `del {key}`: deletes an entry\n"
-    "- `save`: saves the current table\n"
-    "- `load`: loads the last saved table\n"
-    "- `print`: prints the table\n"
-    "- `exit`: exits interactive mode\n";
+        "Available commands:\n"
+        "- `add {key} {value}`: adds a key-value pair to the table\n"
+        "- `get {key}`: get a value associated to the key\n"
+        "- `del {key}`: deletes an entry\n"
+        "- `save`: saves the current table\n"
+        "- `load`: loads the last saved table\n"
+        "- `print`: prints the table\n"
+        "- `exit`: exits interactive mode\n";
 
 static constexpr char SAVE_FILENAME[] = "interactive_mode_table.txt";
 
 int main(void) {
-    HashTable* table = hash_table_create();
+    HashTable *table = hash_table_create();
     if (table == nullptr) {
         fprintf_color(stdout, ERROR_COLOR, "Failed to create hash table\n");
         exit(1);

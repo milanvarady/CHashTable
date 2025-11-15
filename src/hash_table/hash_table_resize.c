@@ -9,8 +9,8 @@
 #include "hash_table_internal.h"
 #include "../debugmalloc/debugmalloc.h"
 
-Entry** create_buckets(size_t size) {
-    Entry **buckets = (Entry **)malloc(sizeof(Entry *) * size);
+Entry **create_buckets(size_t size) {
+    Entry **buckets = (Entry **) malloc(sizeof(Entry *) * size);
     if (buckets == nullptr) return nullptr;
 
     // Set all buckets to nullptr
@@ -21,12 +21,12 @@ Entry** create_buckets(size_t size) {
     return buckets;
 }
 
-HashTable* hash_table_create_with_size(size_t size) {
+HashTable *hash_table_create_with_size(size_t size) {
     // Allocate memory
     Entry **buckets = create_buckets(size);
     if (buckets == nullptr) return nullptr;
 
-    HashTable *hash_table = (HashTable *)malloc(sizeof(HashTable));
+    HashTable *hash_table = (HashTable *) malloc(sizeof(HashTable));
     if (hash_table == nullptr) return nullptr;
 
     // Create table with default size
@@ -40,13 +40,13 @@ HashTable* hash_table_create_with_size(size_t size) {
     return hash_table;
 }
 
-void clear_buckets(Entry** buckets, size_t size) {
+void clear_buckets(Entry **buckets, size_t size) {
     if (buckets == nullptr) return;
 
     for (size_t i = 0; i < size; i++) {
-        Entry* head = buckets[i];
+        Entry *head = buckets[i];
 
-        while (head != nullptr){
+        while (head != nullptr) {
             Entry *tmp = head;
             head = head->next;
             free(tmp);
@@ -57,20 +57,20 @@ void clear_buckets(Entry** buckets, size_t size) {
 }
 
 size_t calc_load_threshold_count(size_t size) {
-    return (size_t)((double)size * HT_LOAD_THRESHOLD);
+    return (size_t) ((double) size * HT_LOAD_THRESHOLD);
 }
 
-void hash_table_resize(HashTable* table) {
+void hash_table_resize(HashTable *table) {
     const size_t new_size = next_prime(table->size * 2);
     const size_t old_size = table->size;
 
     // Try to allocate new buckets
-    Entry** new_buckets = create_buckets(new_size);
+    Entry **new_buckets = create_buckets(new_size);
     // Silently fail
     if (new_buckets == nullptr) return;
 
     // Swap buckets
-    Entry** old_buckets = table->buckets;
+    Entry **old_buckets = table->buckets;
     table->buckets = new_buckets;
     table->size = new_size;
     table->count = 0;
@@ -78,8 +78,8 @@ void hash_table_resize(HashTable* table) {
 
     // Rehash entries into new buckets
     for (size_t i = 0; i < old_size; i++) {
-        Entry* bucket = old_buckets[i];
-        for (Entry* entry = bucket; entry != nullptr; entry = entry->next) {
+        Entry *bucket = old_buckets[i];
+        for (Entry *entry = bucket; entry != nullptr; entry = entry->next) {
             hash_table_insert(table, entry->key, entry->value);
         }
     }

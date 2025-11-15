@@ -2,8 +2,8 @@
 #include "../test_utils.h"
 
 static MunitResult
-test_resizing(const MunitParameter params[], void* fixture) {
-    HashTable* table = (HashTable*)fixture;
+test_resizing(const MunitParameter params[], void *fixture) {
+    HashTable *table = (HashTable *) fixture;
 
     for (int i = 0; i < 20; i++) {
         hash_table_insert(table, i, i * 10);
@@ -23,8 +23,8 @@ test_resizing(const MunitParameter params[], void* fixture) {
 }
 
 static MunitResult
-test_data_persists_after_resize(const MunitParameter params[], void* fixture) {
-    HashTable* table = (HashTable*)fixture;
+test_data_persists_after_resize(const MunitParameter params[], void *fixture) {
+    HashTable *table = (HashTable *) fixture;
 
     // Insert enough to trigger resize
     for (int i = 0; i < 50; i++) {
@@ -40,7 +40,10 @@ test_data_persists_after_resize(const MunitParameter params[], void* fixture) {
 }
 
 MunitTest table_resize[] = {
-    { "/resize", test_resizing, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, nullptr },
-    { "/data_persists", test_data_persists_after_resize, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, nullptr },
-    { nullptr, nullptr, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr }
+    {"/resize", test_resizing, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, nullptr},
+    {
+        "/data_persists", test_data_persists_after_resize, hash_table_setup, hash_table_teardown,
+        MUNIT_TEST_OPTION_NONE, nullptr
+    },
+    {nullptr, nullptr, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr}
 };

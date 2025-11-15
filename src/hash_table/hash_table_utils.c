@@ -12,11 +12,11 @@
 size_t hash_function(int key, size_t table_size) {
     // Sanity check
     assert(table_size <= INT_MAX);
-    int mod = key % (int)table_size;
+    int mod = key % (int) table_size;
     if (mod < 0) {
-        mod += (int)table_size;
+        mod += (int) table_size;
     }
-    return (size_t)mod;
+    return (size_t) mod;
 }
 
 bool is_prime(size_t n) {

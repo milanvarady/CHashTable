@@ -2,8 +2,8 @@
 #include "../test_utils.h"
 
 static MunitResult
-test_table_copy(const MunitParameter params[], void* fixture) {
-    HashTable *table = (HashTable*)fixture;
+test_table_copy(const MunitParameter params[], void *fixture) {
+    HashTable *table = (HashTable *) fixture;
 
     for (int i = 0; i < 10; i++) {
         hash_table_insert(table, i, i + 1);
@@ -28,6 +28,6 @@ test_table_copy(const MunitParameter params[], void* fixture) {
 }
 
 MunitTest table_copy[] = {
-    { "/copy", test_table_copy, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, nullptr },
-    { nullptr, nullptr, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr }
+    {"/copy", test_table_copy, hash_table_setup, hash_table_teardown, MUNIT_TEST_OPTION_NONE, nullptr},
+    {nullptr, nullptr, nullptr, nullptr, MUNIT_TEST_OPTION_NONE, nullptr}
 };
