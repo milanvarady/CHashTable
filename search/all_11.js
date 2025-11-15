@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['table_0',['What is a hash table?',['../md_docs_2specification.html#autotoc_md4',1,'']]],
+  ['table_0',['table',['../group__hash__table.html',1,'Hash Table'],['../md_docs_2specification.html#autotoc_md4',1,'What is a hash table?']]],
   ['table_20size_20resizing_1',['Table size, resizing',['../md_docs_2specification.html#autotoc_md8',1,'']]],
   ['tools_20used_2',['External tools used',['../index.html#autotoc_md23',1,'']]]
 ];

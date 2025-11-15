@@ -7,7 +7,8 @@ var indexSectionsWithContent =
   4: "abcehlops",
   5: "eh",
   6: "ch",
-  7: "cims"
+  7: "ht",
+  8: "cims"
 };
 
 var indexSectionNames =
@@ -19,7 +20,8 @@ var indexSectionNames =
   4: "variables",
   5: "typedefs",
   6: "enums",
-  7: "pages"
+  7: "groups",
+  8: "pages"
 };
 
 var indexSectionLabels =
@@ -31,6 +33,7 @@ var indexSectionLabels =
   4: "Variables",
   5: "Typedefs",
   6: "Enumerations",
-  7: "Pages"
+  7: "Modules",
+  8: "Pages"
 };
 

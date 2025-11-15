@@ -106,7 +106,7 @@ Collaboration diagram for hash_table:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a851e01ea5954641ce4d632cc8b6c375b" id="r_a851e01ea5954641ce4d632cc8b6c375b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="hash__table_8h.html#aaa21d050a89c52467a1bea7b9009ceae">Entry</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhash__table.html#a851e01ea5954641ce4d632cc8b6c375b">buckets</a></td></tr>
+<tr class="memitem:a851e01ea5954641ce4d632cc8b6c375b" id="r_a851e01ea5954641ce4d632cc8b6c375b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__hash__table.html#gaaa21d050a89c52467a1bea7b9009ceae">Entry</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhash__table.html#a851e01ea5954641ce4d632cc8b6c375b">buckets</a></td></tr>
 <tr class="separator:a851e01ea5954641ce4d632cc8b6c375b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0f108c8e8d1403c2f032cb412e6da66" id="r_aa0f108c8e8d1403c2f032cb412e6da66"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhash__table.html#aa0f108c8e8d1403c2f032cb412e6da66">size</a></td></tr>
 <tr class="separator:aa0f108c8e8d1403c2f032cb412e6da66"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -119,40 +119,13 @@ Data Fields</h2></td></tr>
 Related Symbols</h2></td></tr>
 <tr><td class="ititle" colspan="2"><p>(Note that these are not member symbols.) </p>
 </td></tr>
-<tr class="memitem:ae69d85a6c1065c81dbb7e2eb18bda40b" id="r_ae69d85a6c1065c81dbb7e2eb18bda40b"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structhash__table.html">hash_table</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhash__table.html#ae69d85a6c1065c81dbb7e2eb18bda40b">HashTable</a></td></tr>
-<tr class="memdesc:ae69d85a6c1065c81dbb7e2eb18bda40b"><td class="mdescLeft">&#160;</td><td class="mdescRight">An opaque handle to a hash table object.  <br /></td></tr>
-<tr class="separator:ae69d85a6c1065c81dbb7e2eb18bda40b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae69d85a6c1065c81dbb7e2eb18bda40b" id="r_gae69d85a6c1065c81dbb7e2eb18bda40b"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structhash__table.html">hash_table</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__hash__table.html#gae69d85a6c1065c81dbb7e2eb18bda40b">HashTable</a></td></tr>
+<tr class="memdesc:gae69d85a6c1065c81dbb7e2eb18bda40b"><td class="mdescLeft">&#160;</td><td class="mdescRight">An opaque handle to a hash table object.  <br /></td></tr>
+<tr class="separator:gae69d85a6c1065c81dbb7e2eb18bda40b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>@biref Internal implementation of the hash table Holds the reference to the bucket array and other table information </p>
-</div><h2 class="groupheader">Friends And Related Symbol Documentation</h2>
-<a id="ae69d85a6c1065c81dbb7e2eb18bda40b" name="ae69d85a6c1065c81dbb7e2eb18bda40b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae69d85a6c1065c81dbb7e2eb18bda40b">&#9670;&#160;</a></span>HashTable</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="structhash__table.html">hash_table</a> <a class="el" href="structhash__table.html#ae69d85a6c1065c81dbb7e2eb18bda40b">HashTable</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>An opaque handle to a hash table object. </p>
-<p>This is the public-facing type. All functions in this API (like <a class="el" href="hash__table_8h.html#a145041ed407574baae7b02482a62bcac" title="Creates a new empty HashTable object.">hash_table_create()</a>, <a class="el" href="hash__table_8h.html#ac3c9737f9417f37f807ab6c03b00d1d9" title="Inserts a key-value pair into a HashTable.">hash_table_insert()</a>, etc.) operate on a pointer to this type (HashTable*).</p>
-<p>The internal structure is hidden from the user. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Field Documentation</h2>
+</div><h2 class="groupheader">Field Documentation</h2>
 <a id="a851e01ea5954641ce4d632cc8b6c375b" name="a851e01ea5954641ce4d632cc8b6c375b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a851e01ea5954641ce4d632cc8b6c375b">&#9670;&#160;</a></span>buckets</h2>
 
@@ -160,7 +133,7 @@ Related Symbols</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="hash__table_8h.html#aaa21d050a89c52467a1bea7b9009ceae">Entry</a>** hash_table::buckets</td>
+          <td class="memname"><a class="el" href="group__hash__table.html#gaaa21d050a89c52467a1bea7b9009ceae">Entry</a>** hash_table::buckets</td>
         </tr>
       </table>
 </div><div class="memdoc">

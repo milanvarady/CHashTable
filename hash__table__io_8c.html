@@ -115,17 +115,19 @@ Functions</h2></td></tr>
 <tr class="memitem:a8d29f313a5b3ae7c89106081e7dc092a" id="r_a8d29f313a5b3ae7c89106081e7dc092a"><td class="memItemLeft" align="right" valign="top"><a id="a8d29f313a5b3ae7c89106081e7dc092a" name="a8d29f313a5b3ae7c89106081e7dc092a"></a>
 static void&#160;</td><td class="memItemRight" valign="bottom"><b>print_entry_to_file</b> (int key, int value, void *file)</td></tr>
 <tr class="separator:a8d29f313a5b3ae7c89106081e7dc092a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3776e0784840a9609f3922b1b95c59ec" id="r_a3776e0784840a9609f3922b1b95c59ec"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash__table__io_8c.html#a3776e0784840a9609f3922b1b95c59ec">hash_table_save</a> (const HashTable *table, const char *filename)</td></tr>
-<tr class="memdesc:a3776e0784840a9609f3922b1b95c59ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializes a HashTable object into a .txt file.  <br /></td></tr>
+<tr class="memitem:a3776e0784840a9609f3922b1b95c59ec" id="r_a3776e0784840a9609f3922b1b95c59ec"><td class="memItemLeft" align="right" valign="top"><a id="a3776e0784840a9609f3922b1b95c59ec" name="a3776e0784840a9609f3922b1b95c59ec"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>hash_table_save</b> (const HashTable *table, const char *filename)</td></tr>
 <tr class="separator:a3776e0784840a9609f3922b1b95c59ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afdc97992d3940a4cc9a8f8945ace6e48" id="r_afdc97992d3940a4cc9a8f8945ace6e48"><td class="memItemLeft" align="right" valign="top"><a class="el" href="hash__table_8h.html#ab07326d8bc46dc65587cf9d39dbc5960">HashTable_LoadError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash__table__io_8c.html#afdc97992d3940a4cc9a8f8945ace6e48">hash_table_load</a> (const char *filename, HashTable **out_table)</td></tr>
-<tr class="memdesc:afdc97992d3940a4cc9a8f8945ace6e48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a hash table from a specified file.  <br /></td></tr>
+<tr class="memitem:afdc97992d3940a4cc9a8f8945ace6e48" id="r_afdc97992d3940a4cc9a8f8945ace6e48"><td class="memItemLeft" align="right" valign="top"><a id="afdc97992d3940a4cc9a8f8945ace6e48" name="afdc97992d3940a4cc9a8f8945ace6e48"></a>
+<a class="el" href="group__hash__table.html#gab07326d8bc46dc65587cf9d39dbc5960">HashTable_LoadError</a>&#160;</td><td class="memItemRight" valign="bottom"><b>hash_table_load</b> (const char *filename, HashTable **out_table)</td></tr>
+<tr class="memdesc:afdc97992d3940a4cc9a8f8945ace6e48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a hash table from a specified file. <br /></td></tr>
 <tr class="separator:afdc97992d3940a4cc9a8f8945ace6e48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f0cfe0d7a97d62684a1c653cd115386" id="r_a4f0cfe0d7a97d62684a1c653cd115386"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash__table__io_8c.html#a4f0cfe0d7a97d62684a1c653cd115386">hash_table_error_string</a> (<a class="el" href="hash__table_8h.html#ab07326d8bc46dc65587cf9d39dbc5960">HashTable_LoadError</a> error_code)</td></tr>
-<tr class="memdesc:a4f0cfe0d7a97d62684a1c653cd115386"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a hash table load error code into a static, human-readable string.  <br /></td></tr>
+<tr class="memitem:a4f0cfe0d7a97d62684a1c653cd115386" id="r_a4f0cfe0d7a97d62684a1c653cd115386"><td class="memItemLeft" align="right" valign="top"><a id="a4f0cfe0d7a97d62684a1c653cd115386" name="a4f0cfe0d7a97d62684a1c653cd115386"></a>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><b>hash_table_error_string</b> (<a class="el" href="group__hash__table.html#gab07326d8bc46dc65587cf9d39dbc5960">HashTable_LoadError</a> error_code)</td></tr>
+<tr class="memdesc:a4f0cfe0d7a97d62684a1c653cd115386"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a hash table load error code into a static, human-readable string. <br /></td></tr>
 <tr class="separator:a4f0cfe0d7a97d62684a1c653cd115386"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8697ced64d6a6606f38717377e532a68" id="r_a8697ced64d6a6606f38717377e532a68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash__table__io_8c.html#a8697ced64d6a6606f38717377e532a68">hash_table_print</a> (const HashTable *table, bool print_empty_buckets)</td></tr>
-<tr class="memdesc:a8697ced64d6a6606f38717377e532a68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print a HashTable for debugging.  <br /></td></tr>
+<tr class="memitem:a8697ced64d6a6606f38717377e532a68" id="r_a8697ced64d6a6606f38717377e532a68"><td class="memItemLeft" align="right" valign="top"><a id="a8697ced64d6a6606f38717377e532a68" name="a8697ced64d6a6606f38717377e532a68"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>hash_table_print</b> (const HashTable *table, bool print_empty_buckets)</td></tr>
 <tr class="separator:a8697ced64d6a6606f38717377e532a68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -142,151 +144,7 @@ static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><b>HEAD
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Persistence and print methods for HashTable. </p>
-</div><h2 class="groupheader">Function Documentation</h2>
-<a id="a4f0cfe0d7a97d62684a1c653cd115386" name="a4f0cfe0d7a97d62684a1c653cd115386"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f0cfe0d7a97d62684a1c653cd115386">&#9670;&#160;</a></span>hash_table_error_string()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char * hash_table_error_string </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="hash__table_8h.html#ab07326d8bc46dc65587cf9d39dbc5960">HashTable_LoadError</a>&#160;</td>
-          <td class="paramname"><em>error_code</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Converts a hash table load error code into a static, human-readable string. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">error_code</td><td>The HashTable_LoadError code. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A constant string describing the error. </dd></dl>
-
-</div>
-</div>
-<a id="afdc97992d3940a4cc9a8f8945ace6e48" name="afdc97992d3940a4cc9a8f8945ace6e48"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afdc97992d3940a4cc9a8f8945ace6e48">&#9670;&#160;</a></span>hash_table_load()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="hash__table_8h.html#ab07326d8bc46dc65587cf9d39dbc5960">HashTable_LoadError</a> hash_table_load </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>filename</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">HashTable **&#160;</td>
-          <td class="paramname"><em>out_table</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Loads a hash table from a specified file. </p>
-<p>Instead of returning the table, it returns an error code. The created hash table is returned via the <code>out_table</code> pointer. On error, <code>out_table</code> is set to nullptr (or an intermediate state).</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">filename</td><td>The path to the file to load. </td></tr>
-    <tr><td class="paramname">out_table</td><td>A pointer to a (HashTable*) variable. On success, this will be set to point to the newly loaded table. On failure, it will be set to nullptr. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A HashTable_LoadError code indicating success (HT_LOAD_OK) or the type of failure. </dd></dl>
-
-</div>
-</div>
-<a id="a8697ced64d6a6606f38717377e532a68" name="a8697ced64d6a6606f38717377e532a68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8697ced64d6a6606f38717377e532a68">&#9670;&#160;</a></span>hash_table_print()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void hash_table_print </td>
-          <td>(</td>
-          <td class="paramtype">const HashTable *&#160;</td>
-          <td class="paramname"><em>table</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>print_empty_buckets</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Print a HashTable for debugging. </p>
-<p>Prints the table size, item count, and each bucket (key-value pairs)</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">table</td><td>Pointer to HashTable object </td></tr>
-    <tr><td class="paramname">print_empty_buckets</td><td>If false empty buckets are replaced with "...", more concise </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a3776e0784840a9609f3922b1b95c59ec" name="a3776e0784840a9609f3922b1b95c59ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3776e0784840a9609f3922b1b95c59ec">&#9670;&#160;</a></span>hash_table_save()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool hash_table_save </td>
-          <td>(</td>
-          <td class="paramtype">const HashTable *&#160;</td>
-          <td class="paramname"><em>table</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>filename</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Serializes a HashTable object into a .txt file. </p>
-<p>Can be loaded with <a class="el" href="hash__table_8h.html#afdc97992d3940a4cc9a8f8945ace6e48" title="Loads a hash table from a specified file.">hash_table_load()</a></p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">table</td><td>Pointer to HashTable object </td></tr>
-    <tr><td class="paramname">filename</td><td>Save file name </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Success </dd></dl>
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

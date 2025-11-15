@@ -128,10 +128,10 @@ Functions</h2></td></tr>
 <tr class="memitem:afb873b8b2c2161ef9bcc3baf168ebc15" id="r_afb873b8b2c2161ef9bcc3baf168ebc15"><td class="memItemLeft" align="right" valign="top">HashTable *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash__table__internal_8h.html#afb873b8b2c2161ef9bcc3baf168ebc15">hash_table_create_with_size</a> (size_t size)</td></tr>
 <tr class="memdesc:afb873b8b2c2161ef9bcc3baf168ebc15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new dynamically allocated HashTable object with a set size.  <br /></td></tr>
 <tr class="separator:afb873b8b2c2161ef9bcc3baf168ebc15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e7ee4eaf8f91f07f0570ff466dca9e5" id="r_a9e7ee4eaf8f91f07f0570ff466dca9e5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="hash__table_8h.html#aaa21d050a89c52467a1bea7b9009ceae">Entry</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash__table__internal_8h.html#a9e7ee4eaf8f91f07f0570ff466dca9e5">create_buckets</a> (size_t size)</td></tr>
+<tr class="memitem:a9e7ee4eaf8f91f07f0570ff466dca9e5" id="r_a9e7ee4eaf8f91f07f0570ff466dca9e5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__hash__table.html#gaaa21d050a89c52467a1bea7b9009ceae">Entry</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash__table__internal_8h.html#a9e7ee4eaf8f91f07f0570ff466dca9e5">create_buckets</a> (size_t size)</td></tr>
 <tr class="memdesc:a9e7ee4eaf8f91f07f0570ff466dca9e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a dynamically allocated bucket array with a set size.  <br /></td></tr>
 <tr class="separator:a9e7ee4eaf8f91f07f0570ff466dca9e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa541ab6281c88e7645583288a82c7a5f" id="r_aa541ab6281c88e7645583288a82c7a5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash__table__internal_8h.html#aa541ab6281c88e7645583288a82c7a5f">clear_buckets</a> (<a class="el" href="hash__table_8h.html#aaa21d050a89c52467a1bea7b9009ceae">Entry</a> **buckets, size_t size)</td></tr>
+<tr class="memitem:aa541ab6281c88e7645583288a82c7a5f" id="r_aa541ab6281c88e7645583288a82c7a5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash__table__internal_8h.html#aa541ab6281c88e7645583288a82c7a5f">clear_buckets</a> (<a class="el" href="group__hash__table.html#gaaa21d050a89c52467a1bea7b9009ceae">Entry</a> **buckets, size_t size)</td></tr>
 <tr class="memdesc:aa541ab6281c88e7645583288a82c7a5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees all entries inside a bucket array.  <br /></td></tr>
 <tr class="separator:aa541ab6281c88e7645583288a82c7a5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca0a80a062935d3a89d6c87c17c8e369" id="r_aca0a80a062935d3a89d6c87c17c8e369"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash__table__internal_8h.html#aca0a80a062935d3a89d6c87c17c8e369">hash_table_resize</a> (HashTable *table)</td></tr>
@@ -198,7 +198,7 @@ constexpr double&#160;</td><td class="memItemRight" valign="bottom"><b>HT_LOAD_T
         <tr>
           <td class="memname">void clear_buckets </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="hash__table_8h.html#aaa21d050a89c52467a1bea7b9009ceae">Entry</a> **&#160;</td>
+          <td class="paramtype"><a class="el" href="group__hash__table.html#gaaa21d050a89c52467a1bea7b9009ceae">Entry</a> **&#160;</td>
           <td class="paramname"><em>buckets</em>, </td>
         </tr>
         <tr>
@@ -233,7 +233,7 @@ constexpr double&#160;</td><td class="memItemRight" valign="bottom"><b>HT_LOAD_T
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="hash__table_8h.html#aaa21d050a89c52467a1bea7b9009ceae">Entry</a> ** create_buckets </td>
+          <td class="memname"><a class="el" href="group__hash__table.html#gaaa21d050a89c52467a1bea7b9009ceae">Entry</a> ** create_buckets </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>size</em></td><td>)</td>
@@ -339,7 +339,7 @@ constexpr double&#160;</td><td class="memItemRight" valign="bottom"><b>HT_LOAD_T
 <p>Steps:</p><ol type="1">
 <li>Calculate new bucket array size. It is the next prime after the double of the current size, found using <a class="el" href="hash__table__internal_8h.html#ad3ece7e69e4d52592d5d7b95b787dd11" title="Finds the next prime number after n.">next_prime()</a></li>
 <li>Create new buckets and swap out the old one</li>
-<li>Rehash all entries into new buckets using <a class="el" href="hash__table_8h.html#ac3c9737f9417f37f807ab6c03b00d1d9" title="Inserts a key-value pair into a HashTable.">hash_table_insert()</a></li>
+<li>Rehash all entries into new buckets using hash_table_insert()</li>
 <li>Free old bucket</li>
 </ol>
 <dl class="params"><dt>Parameters</dt><dd>

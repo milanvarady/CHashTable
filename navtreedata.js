@@ -49,6 +49,7 @@ var NAVTREE =
         [ "Deserialization", "md_docs_2specification.html#autotoc_md17", null ]
       ] ]
     ] ],
+    [ "Topics", "topics.html", "topics" ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],
