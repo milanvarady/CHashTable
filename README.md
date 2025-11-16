@@ -17,7 +17,7 @@ Read detailed [specification](docs/specification.md).
 ## Example usage
 
 To use the hash table in a project include the `.c` and `.h` files from the `src`
-directory. Except `main.c`. Then include the public API header.
+directory. Except `main.c`. Then include the `hash_table.h` public API header.
 
 ```c
 #include "hash_table.h"
@@ -35,6 +35,12 @@ printf("Value: %d\n", entry->value);
 
 // Delete entry
 bool success = hash_table_delete(table, 1);
+
+// Copy table
+HashTable *copy = hash_table_copy(table);
+
+// Check for equality
+bool is_equal = hash_table_equal(table, copy); // true
 
 // Foreach
 void print_all_key_value_pairs(int key, int value, void *user_data) {

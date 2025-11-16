@@ -15,17 +15,18 @@ The user can interact with a hash table by running actions line-by-line.
 ### Example usage
 
 ```
-CHashTable Interactive Mode
----------------------------
+CHashTable Interactive mode
+Type 'help' for available commands
+
+> help
 Available commands:
-> add {key} {value}
-> get {key}
-> del {key}
-> save
-> load
-> print
-> exit
----------------------------
+- `add {key} {value}`: adds a key-value pair to the table
+- `get {key}`: get a value associated to the key
+- `del {key}`: deletes an entry
+- `save`: saves the current table
+- `load`: loads the last saved table
+- `print`: prints the table
+- `exit`: exits interactive mode
 
 > add 1 10
 > add 2 20
