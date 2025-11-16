@@ -106,7 +106,7 @@ Docs</h1>
 </ul>
 <h1><a class="anchor" id="autotoc_md21"></a>
 Example usage</h1>
-<p>To use the hash table in a project include the <code>.c</code> and <code>.h</code> files from the <code>src</code> directory. Except <code><a class="el" href="main_8c.html" title="Interactive program to play with the HashTable.">main.c</a></code>. Then include the public API header.</p>
+<p>To use the hash table in a project include the <code>.c</code> and <code>.h</code> files from the <code>src</code> directory. Except <code><a class="el" href="main_8c.html" title="Interactive program to play with the HashTable.">main.c</a></code>. Then include the <code><a class="el" href="hash__table_8h.html" title="Public API for HashTable.">hash_table.h</a></code> public API header.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="hash__table_8h.html">hash_table.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Create HashTable</span></div>
@@ -122,6 +122,12 @@ Example usage</h1>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Delete entry</span></div>
 <div class="line"><span class="keywordtype">bool</span> success = hash_table_delete(table, 1);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Copy table</span></div>
+<div class="line">HashTable *copy = hash_table_copy(table);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Check for equality</span></div>
+<div class="line"><span class="keywordtype">bool</span> is_equal = hash_table_equal(table, copy); <span class="comment">// true</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Foreach</span></div>
 <div class="line"><span class="keywordtype">void</span> print_all_key_value_pairs(<span class="keywordtype">int</span> key, <span class="keywordtype">int</span> value, <span class="keywordtype">void</span> *user_data) {</div>
