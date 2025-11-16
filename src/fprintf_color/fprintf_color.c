@@ -17,7 +17,7 @@ static const char* colors[] = {
 };
 
 void fprintf_color(FILE *stream, ColorCode color_code, const char *format, ...) {
-    printf("%s", colors[color_code]);
+    fprintf(stream, "%s", colors[color_code]);
 
     va_list args;
     va_start(args, format);
@@ -26,5 +26,5 @@ void fprintf_color(FILE *stream, ColorCode color_code, const char *format, ...) 
 
     va_end(args);
 
-    printf("%s", colors[COLOR_RESET]);
+    fprintf(stream, "%s", colors[COLOR_RESET]);
 }
