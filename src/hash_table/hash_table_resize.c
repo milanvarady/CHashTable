@@ -27,7 +27,10 @@ HashTable *hash_table_create_with_size(size_t size) {
     if (buckets == nullptr) return nullptr;
 
     HashTable *hash_table = (HashTable *) malloc(sizeof(HashTable));
-    if (hash_table == nullptr) return nullptr;
+    if (hash_table == nullptr) {
+        free(buckets);
+        return nullptr;
+    }
 
     // Create table with default size
     *hash_table = (HashTable){

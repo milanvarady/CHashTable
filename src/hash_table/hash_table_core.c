@@ -46,6 +46,8 @@ bool hash_table_insert(HashTable *table, int key, int value) {
 
     // Else prepend a new entry to the head of the bucket
     Entry *new_entry = (Entry *) malloc(sizeof(Entry));
+    if (new_entry == nullptr) return false;
+
     *new_entry = (Entry){
         .key = key,
         .value = value,
@@ -120,6 +122,7 @@ HashTable *hash_table_copy(const HashTable *table) {
     if (table == nullptr) return nullptr;
 
     HashTable *new_table = hash_table_create_with_size(table->size);
+    if (new_table == nullptr) return nullptr;
     hash_table_foreach(table, copy_callback, new_table);
 
     return new_table;
