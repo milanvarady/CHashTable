@@ -41,7 +41,7 @@ typedef struct hash_table HashTable;
  * The HashTable is dynamically allocated on the heap. Free it with hash_table_destroy().
  *
  * @return Pointer to empty HashTable
- * @related HashTable
+ * @relates HashTable
  */
 HashTable *hash_table_create(void);
 
@@ -52,7 +52,7 @@ HashTable *hash_table_create(void);
  *
  * @param table Hash table to free
  * @return true if deletion happens, false if table is nullptr
- * @related HashTable
+ * @relates HashTable
  */
 bool hash_table_destroy(HashTable *table);
 
@@ -65,7 +65,7 @@ bool hash_table_destroy(HashTable *table);
  * @param key The key to insert
  * @param value The value to insert
  * @return true if insertion was successful
- * @related HashTable
+ * @relates HashTable
  */
 bool hash_table_insert(HashTable *table, int key, int value);
 
@@ -74,7 +74,7 @@ bool hash_table_insert(HashTable *table, int key, int value);
  * @param table Pointer to HashTable object
  * @param key Key to retrieve
  * @return Entry object or nullptr if the element wasn't found
- * @related HashTable
+ * @relates HashTable
  */
 const Entry *hash_table_get(const HashTable *table, int key);
 
@@ -83,7 +83,7 @@ const Entry *hash_table_get(const HashTable *table, int key);
  * @param table Pointer to HashTable object
  * @param key The key of the entry to delete
  * @return true if the deletion was successful
- * @related HashTable
+ * @relates HashTable
  */
 bool hash_table_delete(HashTable *table, int key);
 
@@ -92,7 +92,7 @@ bool hash_table_delete(HashTable *table, int key);
  * @param table1 Table 1
  * @param table2 Table 2
  * @return true if all key-value paris match, false otherwise
- * @related HashTable
+ * @relates HashTable
  */
 bool hash_table_equal(const HashTable *table1, const HashTable *table2);
 
@@ -100,7 +100,7 @@ bool hash_table_equal(const HashTable *table1, const HashTable *table2);
  * @brief Creates a copy of a hash table
  * @param table Table to copy
  * @return Copy of table or nullptr if the original table was also nullptr
- * @related HashTable
+ * @relates HashTable
  */
 HashTable *hash_table_copy(const HashTable *table);
 
@@ -109,7 +109,7 @@ HashTable *hash_table_copy(const HashTable *table);
  * @param table Pointer to HashTable object
  * @param callback A callback function that will be run for every key value pair
  * @param user_data Generic user data that is injected into the callback
- * @related HashTable
+ * @relates HashTable
  */
 void hash_table_foreach(const HashTable *table, void (*callback)(int key, int value, void *), void *user_data);
 
@@ -121,14 +121,14 @@ void hash_table_foreach(const HashTable *table, void (*callback)(int key, int va
  * @param table Pointer to HashTable object
  * @param filename Save file name
  * @return Success
- * @related HashTable
+ * @relates HashTable
  */
 bool hash_table_save(const HashTable *table, const char *filename);
 
 /**
  * @enum HashTable_LoadError
  * @brief Error codes for the hash_table_load function.
- * @related HashTable
+ * @relates HashTable
  */
 typedef enum {
     HT_LOAD_OK = 0,               // Success
@@ -154,7 +154,7 @@ typedef enum {
  * this will be set to point to the newly loaded table.
  * On failure, it will be set to nullptr.
  * @return A HashTable_LoadError code indicating success (HT_LOAD_OK) or the type of failure.
- * @related HashTable
+ * @relates HashTable
  */
 HashTable_LoadError hash_table_load(const char *filename, HashTable **out_table);
 
@@ -163,7 +163,7 @@ HashTable_LoadError hash_table_load(const char *filename, HashTable **out_table)
  *
  * @param error_code The HashTable_LoadError code.
  * @return A constant string describing the error.
- * @related HashTable
+ * @relates HashTable
  */
 const char *hash_table_error_string(HashTable_LoadError error_code);
 
@@ -174,7 +174,7 @@ const char *hash_table_error_string(HashTable_LoadError error_code);
  *
  * @param table Pointer to HashTable object
  * @param print_empty_buckets If false empty buckets are replaced with "...", more concise
- * @related HashTable
+ * @relates HashTable
  */
 void hash_table_print(const HashTable *table, bool print_empty_buckets);
 
